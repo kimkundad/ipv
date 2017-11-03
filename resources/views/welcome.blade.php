@@ -1,2 +1,6 @@
+@extends('layouts.template-main')
+
+@section('content')
+
 <p>Say Hi!</p>
-{{Auth::user()->name}}
+@endsection
