@@ -7,12 +7,12 @@
 }
 }
 .page-header.navbar .page-logo .logo-default {
-    margin: 4px 10px 0;
+    margin: 20px 10px 0;
+    height: 35px;
 }
 .page-header.navbar .page-logo {
     float: left;
     display: block;
-    width: 100%;
     height: 60px;
     padding-left: 0px;
     padding-right: 20px;
