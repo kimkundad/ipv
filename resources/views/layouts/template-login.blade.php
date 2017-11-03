@@ -69,12 +69,29 @@
         <!-- END THEME LAYOUT STYLES -->
         <link rel="shortcut icon" href="favicon.ico" /> </head>
     <!-- END HEAD -->
+      <style>
+      .login {
+        background-color: #f7f7f7;
+      }
+      .login .form-title {
+        color: #9E9E9E;
+    }
+    .login .content .mt-checkbox {
+    color: #9E9E9E!important;
+}
+.login .content .form-control {
+    background-color: #ffffff;
+    border: 1px solid #6ba3c8;
+    height: 43px;
+    color: #9E9E9E;
+}
+      </style>
 
     <body class=" login">
         <!-- BEGIN : LOGIN PAGE 5-2 -->
         <div class="logo">
           <a href="#">
-              <img src="{{asset('./assets/pages/img/logo-big-white.png')}}" style="height: 17px;" alt=""> </a>
+              <img src="{{url('assets/img/AW_app_ipv_calculator_2.png')}}" style="height: 40px;" alt=""> </a>
         </div>
 
                     @yield('content')

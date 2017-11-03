@@ -13,15 +13,17 @@
     border-radius: 100%!important;
     background: #fff;
 }
+.login .content .form-control input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #555;
+}
 </style>
 <div class="content">
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="{{url('/login')}}" method="post" novalidate="novalidate">
       {{ csrf_field() }}
-        <div class="form-title">
-            <span class="form-title">Welcome.</span>
+      <div style="border-top: 1px solid #69a0c4; margin-top: 30px; margin-bottom: 30px;">
 
-        </div>
+      </div>
         <div class="alert alert-danger display-hide">
             <button class="close" data-close="alert"></button>
             <span> Enter any username and password. </span>
@@ -29,7 +31,7 @@
         <div class="form-group">
             <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
             <label class="control-label visible-ie8 visible-ie9">Email</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="email" name="email"> </div>
+            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"> </div>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Password</label>
             <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"> </div>
