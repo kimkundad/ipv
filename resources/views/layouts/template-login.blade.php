@@ -81,7 +81,7 @@
     width: 280px;
 }}
 .login .logo {
-    margin: 60px auto 0px;
+    margin: 30px auto 0px;
     padding: 15px;
     text-align: center;
 }
