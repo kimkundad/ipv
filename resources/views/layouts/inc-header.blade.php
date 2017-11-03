@@ -6,6 +6,17 @@
      display: -webkit-inline-box;
 }
 }
+.page-header.navbar .page-logo .logo-default {
+    margin: 4px 10px 0;
+}
+.page-header.navbar .page-logo {
+    float: left;
+    display: block;
+    width: 100%;
+    height: 60px;
+    padding-left: 0px;
+    padding-right: 20px;
+}
 </style>
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
@@ -13,12 +24,12 @@
         <!-- BEGIN LOGO -->
         <div class="page-logo">
             <a href="#">
-                <img src="{{url('assets/img/logo-light.png')}}" alt="logo" class="logo-default"> </a>
+                <img src="{{url('assets/img/AW_app_ipv_calculator_2.png')}}" alt="logo" class="img-responsive logo-default"> </a>
 
         </div>
         <!-- END LOGO -->
         <!-- BEGIN RESPONSIVE MENU TOGGLER -->
-        <a href="javascript:;" class="menu-toggler responsive-toggler" data-toggle="collapse" data-target=".navbar-collapse"> </a>
+
         <!-- END RESPONSIVE MENU TOGGLER -->
         <!-- BEGIN PAGE ACTIONS -->
         <!-- DOC: Remove "hide" class to enable the page header actions -->
