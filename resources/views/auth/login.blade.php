@@ -2,20 +2,7 @@
 
 @section('content')
 <style>
-.user-login-5 .login-container>.login-content {
-    margin-top: 15%;
-}
-.mt-radio>span:after {
-    left: 5px;
-    top: 5px;
-    height: 6px;
-    width: 6px;
-    border-radius: 100%!important;
-    background: #fff;
-}
-.login .content .form-control input::-webkit-input-placeholder { /* Chrome/Opera/Safari */
-  color: #555;
-}
+
 </style>
 <div class="content">
     <!-- BEGIN LOGIN FORM -->

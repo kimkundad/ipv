@@ -71,23 +71,12 @@
     <!-- END HEAD -->
       <style>
       .login {
-        background-color: #f7f7f7;
+
       }
-      .login .form-title {
-        color: #9E9E9E;
-    }
-    .login .content .mt-checkbox {
-    color: #9E9E9E!important;
-}
-.login .content .form-control {
-    background-color: #ffffff;
-    border: 1px solid #6ba3c8;
-    height: 43px;
-    color: #9E9E9E;
-}
+
       </style>
 
-    <body class=" login">
+    <body class=" login" style="background: url({{url('./assets/pages/media/bg/1.jpg')}}) no-repeat center bottom; background-size: cover;">
         <!-- BEGIN : LOGIN PAGE 5-2 -->
         <div class="logo">
           <a href="#">
