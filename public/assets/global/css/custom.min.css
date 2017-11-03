@@ -1,0 +1,22 @@
+@font-face {
+    font-family: chula;
+    src: url(ChulaCharasRe.woff);
+}
+h2 .page-title {font-family:"chula",sans-serif}
+h1,h2 {font-family:"chula",sans-serif}
+.vakk{letter-spacing:1px;font-size: 20px;}
+.chula {font-family:"chula",sans-serif;font-size: 20px}
+.loy1 {position: absolute;left: 50px;top: 20px;z-index: 99;}
+.loy1m {position: absolute;left: 50px;top: 55px;z-index: 99;}
+.loy2 {position: absolute;left: 900px;top: 120px;z-index: 99;}
+.loy21 {position: absolute;left: 1150px;top: 50px;z-index: 99;}
+.h12{color: #fff;font-family:"chula";font-size: 200px;line-height: 30px;}
+.h11{color: #fff;font-family:"chula";font-size: 30px;}
+.ata{ width: 120px;}.aata{text-align: center;line-height: 30px;}
+.aataz{text-align: left;line-height: 30px;}
+.chula22 {font-family:"chula",sans-serif;font-size: 25px;color:#000;margin-right: 10px;}
+.chula30 {font-family:"chula",sans-serif;font-size: 30px;color:#000;margin-right: 10px;}
+.blackgroadnumber{background-color: #36c6d3;border-radius: 100px;color: #fff;padding-right: 10px;padding-left: 10px;}
+.fonttro{font-size: 20px;}
+.font16{font-size: 16px;}
+.sumting{color: #000;}
