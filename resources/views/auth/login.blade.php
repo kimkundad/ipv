@@ -8,20 +8,31 @@
     <!-- BEGIN LOGIN FORM -->
     <form class="login-form" action="{{url('/login')}}" method="post" novalidate="novalidate">
       {{ csrf_field() }}
-      <div style="border-top: 1px solid #69a0c4; margin-top: 30px; margin-bottom: 30px;">
 
+      <h3 class="form-title" style="font-size: 20px;">Login to your account</h3>
+      <div class="alert alert-danger display-hide">
+          <button class="close" data-close="alert"></button>
+          <span> Enter any username and password. </span>
       </div>
-        <div class="alert alert-danger display-hide">
-            <button class="close" data-close="alert"></button>
-            <span> Enter any username and password. </span>
-        </div>
-        <div class="form-group">
-            <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
-            <label class="control-label visible-ie8 visible-ie9">Email</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"> </div>
-        <div class="form-group">
-            <label class="control-label visible-ie8 visible-ie9">Password</label>
-            <input class="form-control form-control-solid placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password"> </div>
+
+
+          <div class="form-group">
+                      <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                      <label class="control-label visible-ie8 visible-ie9">Email</label>
+                      <div class="input-icon">
+                          <i class="fa fa-envelope-o"></i>
+                          <input class="form-control placeholder-no-fix" type="text" autocomplete="off" placeholder="Email" name="email"> </div>
+                  </div>
+
+
+                  <div class="form-group">
+                      <label class="control-label visible-ie8 visible-ie9">Password</label>
+                      <div class="input-icon">
+                          <i class="fa fa-lock"></i>
+                          <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                  </div>
+
+
         <div class="form-actions">
             <button type="submit" class="btn red btn-block uppercase">Login</button>
         </div>
@@ -36,11 +47,9 @@
                 <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
             </div>
         </div>
-        <div style="border-top: 1px solid #69a0c4; margin-top: 30px;">
 
-        </div>
         <div class="create-account">
-            <p>
+            <p style="margin: 10px 0;">
                 <a href="javascript:;" class="btn-primary btn" id="register-btn">Create an account</a>
             </p>
         </div>
@@ -63,9 +72,7 @@
     <!-- BEGIN REGISTRATION FORM -->
     <form class="register-form" action="{{url('/register')}}" method="post" novalidate="novalidate">
       {{ csrf_field() }}
-        <div class="form-title">
-            <span class="form-title">Sign Up</span>
-        </div>
+
         <p class="hint"> Enter your personal details below: </p>
         <div class="form-group">
             <label class="control-label visible-ie8 visible-ie9">Full Name</label>
