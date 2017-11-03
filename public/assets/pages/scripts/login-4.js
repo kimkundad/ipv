@@ -255,7 +255,7 @@ var Login = function () {
 
             // init background slide images
 		    $.backstretch([
-		        "../assets/pages/media/bg/1.jpg",
+		        "../public/assets/pages/media/bg/1.jpg",
 		        "../public/assets/pages/media/bg/2.jpg",
 		        "../public/assets/pages/media/bg/3.jpg",
 		        "../public/assets/pages/media/bg/4.jpg"
