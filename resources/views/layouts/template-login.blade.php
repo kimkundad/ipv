@@ -74,7 +74,7 @@
     background-color: #efefef;
 }
 .login .content {
-    width: 400px;
+    
     margin-top: 30px;
 }
 
