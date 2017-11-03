@@ -26,6 +26,7 @@
     		<link rel="icon" href="{{url('./assets/img/ico/icon.png')}}" type="image/gif" sizes="48x48">
 
     		<!-- Load It Like A Native App -->
+
     		<meta name="apple-touch-fullscreen" content="yes">
     		<meta name="apple-mobile-web-app-capable" content="yes">
     		<meta name="apple-mobile-web-app-status-bar-style" content="black">

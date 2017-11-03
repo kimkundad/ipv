@@ -18,7 +18,7 @@ Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
 Route::get('/', 'HomeController@index')->name('home');
 
-Route::group(['middleware' => 'admin'], function() {
+Route::group(['middleware' => 'auth'], function() {
 
   Route::resource('welcome', 'WelcomeController');
 
