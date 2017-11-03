@@ -8,11 +8,42 @@
 
     <head>
         <meta charset="utf-8" />
-        <title>Metronic Admin Theme #1 | User Login 6</title>
+        <title>IPV</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta content="width=device-width, initial-scale=1" name="viewport" />
+
         <meta content="Preview page of Metronic Admin Theme #1 for " name="description" />
         <meta content="" name="author" />
+
+
+        <!-- Mobile Metas -->
+    		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+    		<!-- Set Up the App Icon -->
+    		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{url('./assets/img/ios/h/touch-icon-ipad-retina.png')}}" />
+    		<link rel="apple-touch-icon-precomposed" sizes="114x114" href="{{url('./assets/img/ios/h/apple-touch-icon.png')}}">
+    		<link rel="apple-touch-icon-precomposed" sizes="72x72" href="{{url('./assets/img/ios/m/apple-touch-icon.png')}}">
+    		<link rel="apple-touch-icon-precomposed" href="{{url('./assets/img/ios/l/apple-touch-icon-precomposed.png')}}">
+    		<link rel="icon" href="{{url('./assets/img/ico/icon.png')}}" type="image/gif" sizes="48x48">
+
+    		<!-- Load It Like A Native App -->
+    		<meta name="apple-touch-fullscreen" content="yes">
+    		<meta name="apple-mobile-web-app-capable" content="yes">
+    		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+
+    		<!-- Customize the Startup Screen -->
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/l/apple-touch-startup-image-320x460.png')}}"media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/h/apple-touch-startup-image-640x920.png')}}" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 2)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/h/apple-touch-startup-image-640x1096.png')}}" media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/l/apple-touch-startup-image-768x1004.png')}}" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 1)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/l/apple-touch-startup-image-748x1024.png')}}" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 1)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/h/apple-touch-startup-image-1536x2008.png')}}" media="(device-width: 768px) and (device-height: 1024px) and (orientation: portrait) and (-webkit-device-pixel-ratio: 2)">
+    		<link rel="apple-touch-startup-image" href="{{url('./assets/img/ios/h/apple-touch-startup-image-1496x2048.png')}}" media="(device-width: 768px) and (device-height: 1024px) and (orientation: landscape) and (-webkit-device-pixel-ratio: 2)">
+
+
+
+
+
         <!-- BEGIN GLOBAL MANDATORY STYLES -->
         <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700&subset=all"  type="text/css" />
         <link rel="stylesheet" href="{{url('./assets/global/plugins/font-awesome/css/font-awesome.min.css')}}"  type="text/css" />
