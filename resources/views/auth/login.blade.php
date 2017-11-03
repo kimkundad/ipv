@@ -44,7 +44,7 @@
                 </label>
             </div>
             <div class="pull-right forget-password-block">
-                <a href="javascript:;" id="forget-password" class="forget-password">Forgot Password?</a>
+                <a href="javascript:;" id="forget-password" style="color:#fff" class="forget-password">Forgot Password?</a>
             </div>
         </div>
 
