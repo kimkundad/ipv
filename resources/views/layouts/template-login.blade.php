@@ -80,14 +80,23 @@
     padding: 30px;
     width: 280px;
 }}
-
+.login .logo {
+    margin: 60px auto 0px;
+    padding: 15px;
+    text-align: center;
+}
       </style>
 
     <body class=" login">
         <!-- BEGIN : LOGIN PAGE 5-2 -->
+
+
+
         <div class="logo">
+          <img src="{{url('assets/img/AW_app_ipv_calculator_top.png')}}" style="height: 60px;" alt="">
           <a href="#">
-              <img src="{{url('assets/img/AW_app_ipv_calculator_2.png')}}" style="height: 40px;" alt=""> </a>
+            <br>
+              <img src="{{url('assets/img/AW_app_ipv_calculator_2.png')}}" style="height: 40px; margin-top: 20px;" alt=""> </a>
         </div>
 
                     @yield('content')
