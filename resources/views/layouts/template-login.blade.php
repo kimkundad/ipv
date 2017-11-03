@@ -71,12 +71,16 @@
     <!-- END HEAD -->
       <style>
       .login {
-
-      }
+    background-color: #efefef;
+}
+.login .content {
+    width: 400px;
+    margin-top: 30px;
+}
 
       </style>
 
-    <body class=" login" style="background: url({{url('./assets/pages/media/bg/1.jpg')}}) no-repeat center bottom; background-size: cover;">
+    <body class=" login">
         <!-- BEGIN : LOGIN PAGE 5-2 -->
         <div class="logo">
           <a href="#">
