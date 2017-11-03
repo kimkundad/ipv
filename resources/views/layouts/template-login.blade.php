@@ -17,6 +17,9 @@
 
         <!-- Mobile Metas -->
     		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
 
     		<!-- Set Up the App Icon -->
     		<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{url('./assets/img/ios/h/touch-icon-ipad-retina.png')}}" />

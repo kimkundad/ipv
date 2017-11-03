@@ -1,3 +1,12 @@
+<style>
+@media (max-width: 767px){
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-language .dropdown-toggle .langname,
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-user .dropdown-toggle .username.username-hide-on-mobile,
+.page-header.navbar .top-menu .navbar-nav>li.separator {
+     display: -webkit-inline-box;
+}
+}
+</style>
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
     <div class="page-header-inner ">
