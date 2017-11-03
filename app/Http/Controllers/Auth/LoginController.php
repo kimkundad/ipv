@@ -27,7 +27,7 @@ class LoginController extends Controller
 
         $this->clearLoginAttempts($request);
         if ($request->user()->is_admin == 1) {
-          return redirect('admin/dashboard');
+          return redirect('/welcome');
         }
         return $this->authenticated($request, $this->guard()->user())
                 ?: redirect()->intended($this->redirectPath());

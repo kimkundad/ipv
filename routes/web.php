@@ -11,19 +11,16 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Auth::routes();
 
 Route::get('logout', '\App\Http\Controllers\Auth\LoginController@logout');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
 
 Route::group(['middleware' => 'admin'], function() {
 
-  Route::resource('admin/dashboard', 'DashboardController');
-  
+  Route::resource('welcome', 'WelcomeController');
+
 
 });
