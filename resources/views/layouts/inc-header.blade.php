@@ -17,6 +17,9 @@
     padding-left: 0px;
     padding-right: 20px;
 }
+.page-header.navbar .top-menu .navbar-nav>li.dropdown-user {
+    padding: 0 0 0 35px;
+}
 </style>
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
