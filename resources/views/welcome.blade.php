@@ -86,6 +86,7 @@
                             </div></a>
                         </div>
                         <div class="col-md-3">
+                          <a href="{{url('logout')}}">
                             <div class="portlet light">
                                 <div class="card-icon">
                                     <i class="icon-logout font-blue theme-font"></i>
@@ -96,7 +97,7 @@
                                 <div class="card-desc">
 
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                     </div>
 
