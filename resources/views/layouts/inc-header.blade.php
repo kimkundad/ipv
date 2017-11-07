@@ -124,7 +124,7 @@
                       </ul>
                   </li>
 
-
+                  <li class="separator hide"> </li>
                     <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
