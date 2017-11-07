@@ -20,6 +20,12 @@
 .slimScrollDiv{
   height: 220px;
 }
+@media (max-width: 767px){
+  .page-header.navbar .top-menu .navbar-nav>li.dropdown-notification .dropdown-menu {
+      margin-right: -150px;
+  }
+}
+
 </style>
 <div class="page-header navbar navbar-fixed-top">
     <!-- BEGIN HEADER INNER -->
