@@ -46,6 +46,85 @@
                 <ul class="nav navbar-nav pull-right">
 
 
+                  <li class="separator hide"> </li>
+                  <!-- BEGIN NOTIFICATION DROPDOWN -->
+                  <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
+                  <!-- DOC: Apply "dropdown-hoverable" class after "dropdown" and remove data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to enable hover dropdown mode -->
+                  <!-- DOC: Remove "dropdown-hoverable" and add data-toggle="dropdown" data-hover="dropdown" data-close-others="true" attributes to the below A element with dropdown-toggle class -->
+                  <li class="dropdown dropdown-extended dropdown-notification dropdown-dark" id="header_notification_bar">
+                      <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
+                          <i class="icon-bell"></i>
+                          <span class="badge badge-success"> 6 </span>
+                      </a>
+                      <ul class="dropdown-menu">
+                          <li class="external">
+                              <h3>
+                                  <span class="bold">6 pending</span> notifications</h3>
+                              <a href="page_user_profile_1.html">view all</a>
+                          </li>
+                          <li>
+                              <ul class="dropdown-menu-list scroller" style="height: 250px;" data-handle-color="#637283">
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">just now</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-success">
+                                                  <i class="fa fa-plus"></i>
+                                              </span> New user registered. </span>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">3 mins</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-danger">
+                                                  <i class="fa fa-bolt"></i>
+                                              </span> Server #12 overloaded. </span>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">10 mins</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-warning">
+                                                  <i class="fa fa-bell-o"></i>
+                                              </span> Server #2 not responding. </span>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">14 hrs</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-info">
+                                                  <i class="fa fa-bullhorn"></i>
+                                              </span> Application error. </span>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">2 days</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-danger">
+                                                  <i class="fa fa-bolt"></i>
+                                              </span> Database overloaded 68%. </span>
+                                      </a>
+                                  </li>
+                                  <li>
+                                      <a href="javascript:;">
+                                          <span class="time">3 days</span>
+                                          <span class="details">
+                                              <span class="label label-sm label-icon label-danger">
+                                                  <i class="fa fa-bolt"></i>
+                                              </span> A user IP blocked. </span>
+                                      </a>
+                                  </li>
+
+                              </ul>
+                          </li>
+                      </ul>
+                  </li>
+
+
                     <!-- END TODO DROPDOWN -->
                     <!-- BEGIN USER LOGIN DROPDOWN -->
                     <!-- DOC: Apply "dropdown-dark" class after below "dropdown-extended" to change the dropdown styte -->
