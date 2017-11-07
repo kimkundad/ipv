@@ -39,12 +39,12 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{url('welcome')}}">Home</a>
+                <a href="{{url('welcome')}}"><i class="icon-home"></i> Home</a>
                 <i class="fa fa-circle"></i>
             </li>
 
             <li>
-                <span class="active">User Profile</span>
+                <span class="active"><i class="icon-user-following"></i> User Profile</span>
             </li>
         </ul>
         <!-- END PAGE BREADCRUMB -->

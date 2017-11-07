@@ -32,10 +32,10 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="#">Home</a>
+                <a href="#"><i class="icon-home"></i> Home</a>
                 <i class="fa fa-circle"></i>
             </li>
-        
+
         </ul>
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
