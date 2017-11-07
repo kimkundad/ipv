@@ -21,7 +21,7 @@
                       <label class="control-label visible-ie8 visible-ie9">Email</label>
                       <div class="input-icon">
                           <i class="fa fa-envelope-o"></i>
-                          <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email"> </div>
+                          <input class="form-control placeholder-no-fix" type="email"  placeholder="Email" name="email"> </div>
                   </div>
 
 
@@ -29,7 +29,7 @@
                       <label class="control-label visible-ie8 visible-ie9">Password</label>
                       <div class="input-icon">
                           <i class="fa fa-lock"></i>
-                          <input class="form-control placeholder-no-fix" type="password" autocomplete="off" placeholder="Password" name="password" /> </div>
+                          <input class="form-control placeholder-no-fix" type="password" placeholder="Password" name="password" /> </div>
                   </div>
 
 
