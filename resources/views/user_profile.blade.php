@@ -84,17 +84,17 @@
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
                             <ul class="nav">
-                                <li>
-                                    <a href="page_user_profile_1.html">
-                                        <i class="icon-home"></i> Overview </a>
-                                </li>
                                 <li class="active">
-                                    <a href="page_user_profile_1_account.html">
-                                        <i class="icon-settings"></i> Account Settings </a>
+                                    <a href="#tab_1_1" data-toggle="tab">
+                                        <i class="icon-home"></i> Personal Info </a>
+                                </li>
+                                <li >
+                                    <a href="#tab_1_2" data-toggle="tab">
+                                        <i class="icon-picture"></i> Change Avatar </a>
                                 </li>
                                 <li>
-                                    <a href="page_user_profile_1_help.html">
-                                        <i class="icon-info"></i> Help </a>
+                                    <a href="#tab_1_3" data-toggle="tab">
+                                        <i class="icon-lock"></i> Change Password </a>
                                 </li>
                             </ul>
                         </div>
@@ -117,18 +117,7 @@
                                         <i class="icon-globe theme-font hide"></i>
                                         <span class="caption-subject font-blue-madison bold uppercase">Profile Account</span>
                                     </div>
-                                    <ul class="nav nav-tabs">
-                                        <li class="active">
-                                            <a href="#tab_1_1" data-toggle="tab">Personal Info</a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab_1_2" data-toggle="tab">Change Avatar</a>
-                                        </li>
-                                        <li>
-                                            <a href="#tab_1_3" data-toggle="tab">Change Password</a>
-                                        </li>
 
-                                    </ul>
                                 </div>
                                 <div class="portlet-body">
                                     <div class="tab-content">
