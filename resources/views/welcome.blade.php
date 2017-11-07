@@ -78,6 +78,7 @@
                             </div>
                         </div>
                         <div class="col-md-3">
+                          <a href="{{url('user_profile')}}">
                             <div class="portlet light">
                                 <div class="card-icon">
                                     <i class="icon-note font-purple-wisteria theme-font"></i>
@@ -88,7 +89,7 @@
                                 <div class="card-desc">
 
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                         <div class="col-md-3">
                             <div class="portlet light">

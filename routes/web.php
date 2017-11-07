@@ -21,6 +21,7 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::group(['middleware' => 'auth'], function() {
 
   Route::resource('welcome', 'WelcomeController');
+  Route::resource('user_profile', 'User_profileController');
 
 
 });
