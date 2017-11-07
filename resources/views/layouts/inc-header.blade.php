@@ -17,8 +17,8 @@
     padding-left: 0px;
     padding-right: 20px;
 }
-.page-header.navbar .top-menu .navbar-nav>li.dropdown-user {
-    padding: 0 0 0 35px;
+.slimScrollDiv{
+  height: 220px;
 }
 </style>
 <div class="page-header navbar navbar-fixed-top">
@@ -71,54 +71,42 @@
                                       <a href="javascript:;">
                                           <span class="time">just now</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-success">
-                                                  <i class="fa fa-plus"></i>
-                                              </span> New user registered. </span>
+                                               New user registered. </span>
                                       </a>
                                   </li>
                                   <li>
                                       <a href="javascript:;">
                                           <span class="time">3 mins</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-danger">
-                                                  <i class="fa fa-bolt"></i>
-                                              </span> Server #12 overloaded. </span>
+                                               Server #12 overloaded. </span>
                                       </a>
                                   </li>
                                   <li>
                                       <a href="javascript:;">
                                           <span class="time">10 mins</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-warning">
-                                                  <i class="fa fa-bell-o"></i>
-                                              </span> Server #2 not responding. </span>
+                                               Server #2 not responding. </span>
                                       </a>
                                   </li>
                                   <li>
                                       <a href="javascript:;">
                                           <span class="time">14 hrs</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-info">
-                                                  <i class="fa fa-bullhorn"></i>
-                                              </span> Application error. </span>
+                                               Application error. </span>
                                       </a>
                                   </li>
                                   <li>
                                       <a href="javascript:;">
                                           <span class="time">2 days</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-danger">
-                                                  <i class="fa fa-bolt"></i>
-                                              </span> Database overloaded 68%. </span>
+                                               Database overloaded 68%. </span>
                                       </a>
                                   </li>
                                   <li>
                                       <a href="javascript:;">
                                           <span class="time">3 days</span>
                                           <span class="details">
-                                              <span class="label label-sm label-icon label-danger">
-                                                  <i class="fa fa-bolt"></i>
-                                              </span> A user IP blocked. </span>
+                                               A user IP blocked. </span>
                                       </a>
                                   </li>
 
