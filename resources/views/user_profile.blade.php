@@ -91,6 +91,16 @@
                             <button type="button" class="btn btn-circle green btn-sm">{{Auth::user()->position}}</button>
 
                         </div>
+
+                        @if (count($errors) > 0)
+                          <div class="alert alert-danger">
+                              <ul>
+                                  @foreach ($errors->all() as $error)
+                                      <li>{{ $error }}</li>
+                                  @endforeach
+                              </ul>
+                          </div>
+                      @endif
                         <!-- END SIDEBAR BUTTONS -->
                         <!-- SIDEBAR MENU -->
                         <div class="profile-usermenu">
@@ -120,6 +130,8 @@
                 <!-- END BEGIN PROFILE SIDEBAR -->
                 <!-- BEGIN PROFILE CONTENT -->
                 <div class="profile-content">
+
+
                     <div class="row">
                         <div class="col-md-12">
                             <div class="portlet light bordered">
@@ -202,18 +214,24 @@
                                         <!-- END CHANGE AVATAR TAB -->
                                         <!-- CHANGE PASSWORD TAB -->
                                         <div class="tab-pane" id="tab_1_3">
-                                            <form action="#">
+                                          <form  method="POST" action="{{ url('update_pass/') }}">
+                                              {{ csrf_field() }}
+                                              <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
+                                              <input type="hidden" name="_method" value="post">
                                                 <div class="form-group">
                                                     <label class="control-label">Current Password</label>
-                                                    <input type="password" class="form-control" /> </div>
+                                                    <input type="password" class="form-control" name="current-password" /> </div>
                                                 <div class="form-group">
                                                     <label class="control-label">New Password</label>
-                                                    <input type="password" class="form-control" /> </div>
+                                                    <input type="password" class="form-control" name="password"/> </div>
                                                 <div class="form-group">
                                                     <label class="control-label">Re-type New Password</label>
-                                                    <input type="password" class="form-control" /> </div>
+                                                    <input type="password" class="form-control" name="password_confirmation" /> </div>
                                                 <div class="margin-top-10">
-                                                    <a href="javascript:;" class="btn green"> Change Password </a>
+                                                  <button type="submit" class="btn green">
+                                                      Change Password
+                                                  </button>
+
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                 </div>
                                             </form>
@@ -254,6 +272,25 @@
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">
   swal("Success!", "You edit profile Success!", "success");
+</script>
+@endif
+
+
+@if ($message = Session::get('error_pass'))
+<script type="text/javascript">
+  swal("Error!", "Please enter password!", "error");
+</script>
+@endif
+
+@if ($message = Session::get('success_pass'))
+<script type="text/javascript">
+  swal("Success!", "Change your password Success!", "success");
+</script>
+@endif
+
+@if ($message = Session::get('error_correct_pass'))
+<script type="text/javascript">
+  swal("Error!", "Please enter correct current password!", "error");
 </script>
 @endif
 

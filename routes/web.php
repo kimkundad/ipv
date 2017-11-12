@@ -22,6 +22,7 @@ Route::group(['middleware' => 'auth'], function() {
 
   Route::resource('welcome', 'WelcomeController');
   Route::resource('user_profile', 'User_profileController');
+  Route::post('update_pass', 'User_profileController@update_pass');
 
 
 });
