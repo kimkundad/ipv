@@ -64,17 +64,31 @@
                     <div class="portlet light profile-sidebar-portlet bordered">
                         <!-- SIDEBAR USERPIC -->
                         <div class="profile-userpic">
-                            <img src="{{url('assets/pages/media/profile/profile_user.jpg')}}" class="img-responsive" alt=""> </div>
+
+
+                            @if(Auth::user()->avatar == null)
+
+                                @if(Auth::user()->sex == 1)
+                                  <img alt="" class="img-responsive" src="{{url('assets/avatar/image/1483537975.png')}}">
+                                @else
+                                  <img alt="" class="img-responsive" src="{{url('assets/avatar/image/1483556517.png')}}">
+                                @endif
+
+                            @else
+                              <img alt="" class="img-responsive" src="{{url('assets/avatar/image/'.Auth::user()->avatar)}}">
+                            @endif
+
+                        </div>
                         <!-- END SIDEBAR USERPIC -->
                         <!-- SIDEBAR USER TITLE -->
                         <div class="profile-usertitle">
-                            <div class="profile-usertitle-name"> Marcus Doe </div>
+                            <div class="profile-usertitle-name"> {{Auth::user()->name}} </div>
 
                         </div>
                         <!-- END SIDEBAR USER TITLE -->
                         <!-- SIDEBAR BUTTONS -->
                         <div class="profile-userbuttons">
-                            <button type="button" class="btn btn-circle green btn-sm">Developer</button>
+                            <button type="button" class="btn btn-circle green btn-sm">{{Auth::user()->position}}</button>
 
                         </div>
                         <!-- END SIDEBAR BUTTONS -->
