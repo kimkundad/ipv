@@ -134,7 +134,7 @@
                                     <div class="tab-content">
                                         <!-- PERSONAL INFO TAB -->
                                         <div class="tab-pane active" id="tab_1_1">
-                                          <form class="form-horizontal" method="POST" action="{{ url('user_profile') }}">
+                                          <form  method="POST" action="{{ url('user_profile') }}">
                                               {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <label class="control-label">Name</label>
