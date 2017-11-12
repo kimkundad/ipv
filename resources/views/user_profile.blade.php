@@ -134,29 +134,29 @@
                                     <div class="tab-content">
                                         <!-- PERSONAL INFO TAB -->
                                         <div class="tab-pane active" id="tab_1_1">
-                                            <form role="form" action="#">
+                                          <form class="form-horizontal" method="POST" action="{{ url('user_profile') }}">
+                                              {{ csrf_field() }}
                                                 <div class="form-group">
-                                                    <label class="control-label">First Name</label>
-                                                    <input type="text" placeholder="John" class="form-control" /> </div>
+                                                    <label class="control-label">Name</label>
+                                                    <input type="text" placeholder="John" name="name" class="form-control" value="{{Auth::user()->name}}" /> </div>
                                                 <div class="form-group">
-                                                    <label class="control-label">Last Name</label>
-                                                    <input type="text" placeholder="Doe" class="form-control" /> </div>
+                                                    <label class="control-label">Email</label>
+                                                    <input type="text" placeholder="Doe" name="email" class="form-control" value="{{Auth::user()->email}}"/> </div>
                                                 <div class="form-group">
                                                     <label class="control-label">Mobile Number</label>
-                                                    <input type="text" placeholder="+1 646 580 DEMO (6284)" class="form-control" /> </div>
+                                                    <input type="text" placeholder="+1 646 580 DEMO (6284)" name="phone" class="form-control" value="{{Auth::user()->phone}}"/> </div>
                                                 <div class="form-group">
-                                                    <label class="control-label">Interests</label>
-                                                    <input type="text" placeholder="Design, Web etc." class="form-control" /> </div>
+                                                    <label class="control-label">Position</label>
+                                                    <input type="text" placeholder="Design, Web etc." name="position" class="form-control" value="{{Auth::user()->position}}"/> </div>
                                                 <div class="form-group">
-                                                    <label class="control-label">Occupation</label>
-                                                    <input type="text" placeholder="Web Developer" class="form-control" /> </div>
-                                                <div class="form-group">
-                                                    <label class="control-label">About</label>
-                                                    <textarea class="form-control" rows="3" placeholder="We are KeenThemes!!!"></textarea>
-                                                </div>
-                                                <div class="form-group">
-                                                    <label class="control-label">Website Url</label>
-                                                    <input type="text" placeholder="http://www.mywebsite.com" class="form-control" /> </div>
+                                                    <label class="control-label">Sex</label>
+                                                    <label class="checkbox-inline">
+                                                      <input type="radio" name="sex" id="inlineCheckbox1" value="1"> Male
+                                                    </label>
+                                                    <label class="checkbox-inline">
+                                                      <input type="radio" name="sex" id="inlineCheckbox2" value="2"> Female
+                                                    </label>
+
                                                 <div class="margiv-top-10">
                                                     <a href="javascript:;" class="btn green"> Save Changes </a>
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
