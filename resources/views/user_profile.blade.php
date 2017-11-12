@@ -156,7 +156,7 @@
                                                     <label class="checkbox-inline">
                                                       <input type="radio" name="sex" id="inlineCheckbox2" value="2"> Female
                                                     </label>
-
+                                                    </div>
                                                 <div class="margiv-top-10">
                                                     <a href="javascript:;" class="btn green"> Save Changes </a>
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
