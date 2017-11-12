@@ -129,28 +129,26 @@
                         <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown" data-close-others="true">
                             <span class="username username-hide-on-mobile"> {{Auth::user()->name}} </span>
                             <!-- DOC: Do not remove below empty space(&nbsp;) as its purposely used -->
-                            <img alt="" class="img-circle" src="{{url('assets/avatar/image/1483537975.png')}}"> </a>
+                            @if(Auth::user()->avatar == null)
+
+                                @if(Auth::user()->sex == 1)
+                                  <img alt="" class="img-circle" src="{{url('assets/avatar/image/1483537975.png')}}">
+                                @else
+                                  <img alt="" class="img-circle" src="{{url('assets/avatar/image/1483556517.png')}}">
+                                @endif
+
+                            @else
+                              <img alt="" class="img-circle" src="{{url('assets/avatar/image/'.Auth::user()->avatar)}}">
+                            @endif
+
+
+                          </a>
                         <ul class="dropdown-menu dropdown-menu-default">
                             <li>
                                 <a href="#">
                                     <i class="icon-user"></i> My Profile </a>
                             </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-calendar"></i> My Calendar </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-envelope-open"></i> My Inbox
-                                    <span class="badge badge-danger"> 3 </span>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="icon-rocket"></i> My Tasks
-                                    <span class="badge badge-success"> 7 </span>
-                                </a>
-                            </li>
+
                             <li class="divider"> </li>
                             <li>
                                 <a href="#">
