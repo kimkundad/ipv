@@ -130,7 +130,7 @@ class User_profileController extends Controller
         //$img->crop(300, 300, 0, 0);
         $img->resize(300, 300, function ($constraint) {
         $constraint->aspectRatio();
-      })->crop(200, 200, 25, 0)->save('assets/avatar/image/'.$input['imagename']);
+      })->crop(200, 200, 0, 0)->save('assets/avatar/image/'.$input['imagename']);
 
       $package = User::find($id);
        $package->avatar = $input['imagename'];
