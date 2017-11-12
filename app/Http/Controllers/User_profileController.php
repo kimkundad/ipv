@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Auth;
+use App\User;
 use Illuminate\Http\Request;
 
 class User_profileController extends Controller
@@ -14,7 +15,8 @@ class User_profileController extends Controller
      */
      public function index()
      {
-         return view('user_profile');
+       $data['method'] = "put";
+       return view('user_profile',$data);
      }
 
     /**
@@ -69,7 +71,25 @@ class User_profileController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+        'name' => 'required',
+        'email' => 'required',
+        'phone' => 'required',
+        'position' => 'required',
+        'sex' => 'required'
+      ]);
+
+      $package = User::find($id);
+       $package->name = $request['name'];
+       $package->email = $request['email'];
+       $package->position = $request['phone'];
+       $package->phone = $request['position'];
+       $package->sex = $request['sex'];
+       $package->save();
+
+     return redirect(url('user_profile'))->with('success_user','แก้ไขบทความสำเร็จแล้วค่ะ');
+
+
     }
 
     /**

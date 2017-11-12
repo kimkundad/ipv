@@ -134,10 +134,12 @@
                                     <div class="tab-content">
                                         <!-- PERSONAL INFO TAB -->
                                         <div class="tab-pane active" id="tab_1_1">
-                                          <form  method="POST" action="{{ url('user_profile') }}">
+                                          <form  method="POST" action="{{ url('user_profile/'.Auth::user()->id) }}">
+                                              {{ method_field($method) }}
                                               {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <label class="control-label">Name</label>
+                                                    <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
                                                     <input type="text" placeholder="John" name="name" class="form-control" value="{{Auth::user()->name}}" /> </div>
                                                 <div class="form-group">
                                                     <label class="control-label">Email</label>
@@ -157,8 +159,12 @@
                                                       <input type="radio" name="sex" id="inlineCheckbox2" value="2" {{ Auth::user()->sex == 2 ? 'checked' : '' }}> Female
                                                     </label>
                                                     </div>
+                                                    <br><br>
                                                 <div class="margiv-top-10">
-                                                    <a href="javascript:;" class="btn green"> Save Changes </a>
+                                                  <button type="submit" class="btn green">
+                                                      Save Changes
+                                                  </button>
+
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                 </div>
                                             </form>
@@ -244,5 +250,11 @@
 @endsection
 
 @section('scripts')
+
+@if ($message = Session::get('success_user'))
+<script type="text/javascript">
+  swal("Success!", "You edit profile Success!", "success");
+</script>
+@endif
 
 @stop('scripts')

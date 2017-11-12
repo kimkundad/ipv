@@ -15,4 +15,5 @@
 <script src="{{url('assets/layouts/layout4/scripts/demo.min.js')}}" type="text/javascript"></script>
 <script src="{{url('assets/layouts/global/scripts/quick-sidebar.min.js')}}" type="text/javascript"></script>
 <script src="{{url('assets/layouts/global/scripts/quick-nav.min.js')}}" type="text/javascript"></script>
+<script src="{{url('assets/global/plugins/bootstrap-sweetalert/sweetalert.min.js')}}" type="text/javascript"></script>
 <!-- END THEME LAYOUT SCRIPTS -->
