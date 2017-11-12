@@ -117,6 +117,9 @@ class User_profileController extends Controller
 
     public function update_pic(Request $request)
     {
+      $this->validate($request, [
+        'image' => 'required'
+      ]);
 
       $image = $request->file('image');
       $id = $request['id'];
