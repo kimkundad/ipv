@@ -15,6 +15,9 @@
     height: auto;
 
 }
+.croppie-container {
+    padding: 30px 0px 30px 0px;
+}
 </style>
 @stop('stylesheet')
 
