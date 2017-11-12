@@ -151,10 +151,10 @@
                                                 <div class="form-group">
                                                     <label class="control-label">Sex</label>
                                                     <label class="checkbox-inline">
-                                                      <input type="radio" name="sex" id="inlineCheckbox1" value="1"> Male
+                                                      <input type="radio" name="sex" id="inlineCheckbox1" value="1" {{ Auth::user()->sex == 1 ? 'checked' : '' }}> Male
                                                     </label>
                                                     <label class="checkbox-inline">
-                                                      <input type="radio" name="sex" id="inlineCheckbox2" value="2"> Female
+                                                      <input type="radio" name="sex" id="inlineCheckbox2" value="2" {{ Auth::user()->sex == 2 ? 'checked' : '' }}> Female
                                                     </label>
                                                     </div>
                                                 <div class="margiv-top-10">
