@@ -4,7 +4,8 @@
 
 <link href="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/pages/css/profile.min.css')}}" rel="stylesheet" type="text/css">
-<link href="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/croppie/croppie.css')}}" rel="stylesheet" type="text/css">
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -187,7 +188,9 @@
                                         <div class="tab-pane" id="tab_1_2">
                                             <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
                                                 eiusmod. </p>
-                                            <form  method="POST" action="{{ url('update_pic/') }}" enctype="multipart/form-data">
+
+
+                                          <!--    <form  method="POST" action="{{ url('update_pic/') }}" enctype="multipart/form-data">
                                               <input type="hidden" name="_method" value="post">
                                               {{ csrf_field() }}
                                                 <div class="form-group">
@@ -215,7 +218,40 @@
                                                   </button>
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                 </div>
-                                            </form>
+                                            </form>  -->
+
+
+
+
+
+                                                  <div class="form-group">
+                                                      <div class="fileinput fileinput-new" data-provides="fileinput">
+                                                          <div id="upload-demo" style="max-width: 280px;"></div>
+
+                                                          <div>
+                                                              <span class="btn default btn-file">
+                                                                  <span class="fileinput-new"> Select image </span>
+                                                                  <span class="fileinput-exists"> Change </span>
+                                                                  <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
+                                                                  <input type="file" id="upload" name="image" accept="image/*"> </span>
+                                                              <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
+                                                          </div>
+                                                      </div>
+                                                      <div class="clearfix margin-top-10">
+                                                          <span class="label label-danger">NOTE! </span>
+                                                          <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+                                                      </div>
+                                                  </div>
+                                                  <div class="margin-top-10">
+                                                    <button type="submit" class="btn green upload-result">
+                                                        Save Changes
+                                                    </button>
+                                                      <a href="javascript:;" class="btn default"> Cancel </a>
+                                                  </div>
+
+
+
+
                                         </div>
                                         <!-- END CHANGE AVATAR TAB -->
                                         <!-- CHANGE PASSWORD TAB -->
@@ -274,7 +310,65 @@
 @endsection
 
 @section('scripts')
-<script src="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
+<script src="{{url('assets/croppie/croppie.js')}}" type="text/javascript"></script>
+
+
+<script type="text/javascript">
+
+$.ajaxSetup({
+headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+}
+});
+
+$uploadCrop = $('#upload-demo').croppie({
+    enableExif: true,
+    viewport: {
+        width: 200,
+        height: 200,
+        type: 'circle'
+    },
+    boundary: {
+        width: 300,
+        height: 300
+    }
+});
+
+$('#upload').on('change', function () {
+	var reader = new FileReader();
+    reader.onload = function (e) {
+    	$uploadCrop.croppie('bind', {
+    		url: e.target.result
+    	}).then(function(){
+    		console.log('jQuery bind complete');
+    	});
+    }
+    reader.readAsDataURL(this.files[0]);
+});
+
+$('.upload-result').on('click', function (ev) {
+	$uploadCrop.croppie('result', {
+		type: 'canvas',
+		size: 'viewport'
+	}).then(function (resp) {
+		$.ajax({
+			url: "{{url('image-crop')}}",
+			type: "POST",
+			data: {"image":resp},
+			success: function (data) {
+				swal("Success!", "Change avatar image success!", "success");
+
+        var delayMillis = 3000; //1 second
+
+        setTimeout(function() {
+          window.location = "{{url('user_profile')}}";
+        }, delayMillis);
+			}
+		});
+	});
+});
+
+</script>
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">

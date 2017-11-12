@@ -25,6 +25,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('update_pass', 'User_profileController@update_pass');
 
   Route::post('update_pic', 'User_profileController@update_pic');
-
+  Route::post('image-crop', 'User_profileController@imageCropPost');
 
 });

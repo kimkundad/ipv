@@ -132,12 +132,35 @@ class User_profileController extends Controller
         $constraint->aspectRatio();
       })->crop(200, 200, 0, 0)->save('assets/avatar/image/'.$input['imagename']);
 
-      $package = User::find($id);
+       $package = User::find($id);
        $package->avatar = $input['imagename'];
        $package->save();
 
        return redirect(url('user_profile'))->with('success_user_pic','แก้ไขบทความสำเร็จแล้วค่ะ');
 
+    }
+
+
+    public function imageCropPost(Request $request)
+    {
+        $data = $request->image;
+
+        list($type, $data) = explode(';', $data);
+        list(, $data)      = explode(',', $data);
+
+        $data = base64_decode($data);
+        $image_name= time().'.png';
+        $path = public_path() . "/assets/avatar/image/" . $image_name;
+
+        file_put_contents($path, $data);
+
+        $id = Auth::user()->id;
+
+        $package = User::find($id);
+        $package->avatar = $image_name;
+        $package->save();
+
+        return response()->json(['success'=>'done']);
     }
 
 
