@@ -6,6 +6,7 @@ use Auth;
 use App\User;
 use Illuminate\Http\Request;
 use Hash;
+use Intervention\Image\ImageManagerStatic as Image;
 use Illuminate\Support\Facades\Validator;
 
 class User_profileController extends Controller
@@ -110,6 +111,30 @@ class User_profileController extends Controller
       ], $messages);
 
       return $validator;
+    }
+
+
+
+    public function update_pic(Request $request)
+    {
+
+      $image = $request->file('image');
+      $id = $request['id'];
+
+       $input['imagename'] = time().'.'.$image->getClientOriginalExtension();
+
+        $img = Image::make($image->getRealPath());
+        //$img->crop(300, 300, 0, 0);
+        $img->resize(300, 300, function ($constraint) {
+        $constraint->aspectRatio();
+      })->crop(200, 200, 25, 0)->save('assets/avatar/image/'.$input['imagename']);
+
+      $package = User::find($id);
+       $package->avatar = $input['imagename'];
+       $package->save();
+
+       return redirect(url('user_profile'))->with('success_user_pic','แก้ไขบทความสำเร็จแล้วค่ะ');
+
     }
 
 

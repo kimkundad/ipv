@@ -4,6 +4,7 @@
 
 <link href="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/pages/css/profile.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.css')}}" rel="stylesheet" type="text/css">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -186,7 +187,9 @@
                                         <div class="tab-pane" id="tab_1_2">
                                             <p> Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum
                                                 eiusmod. </p>
-                                            <form action="#" role="form">
+                                            <form  method="POST" action="{{ url('update_pic/') }}" enctype="multipart/form-data">
+                                              <input type="hidden" name="_method" value="post">
+                                              {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <div class="fileinput fileinput-new" data-provides="fileinput">
                                                         <div class="fileinput-new thumbnail" style="width: 200px; height: 150px;">
@@ -196,7 +199,8 @@
                                                             <span class="btn default btn-file">
                                                                 <span class="fileinput-new"> Select image </span>
                                                                 <span class="fileinput-exists"> Change </span>
-                                                                <input type="file" name="..."> </span>
+                                                                <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
+                                                                <input type="file" name="image"> </span>
                                                             <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                         </div>
                                                     </div>
@@ -206,7 +210,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="margin-top-10">
-                                                    <a href="javascript:;" class="btn green"> Submit </a>
+                                                  <button type="submit" class="btn green">
+                                                      Save Changes
+                                                  </button>
                                                     <a href="javascript:;" class="btn default"> Cancel </a>
                                                 </div>
                                             </form>
@@ -268,6 +274,7 @@
 @endsection
 
 @section('scripts')
+<script src="{{url('assets/global/plugins/bootstrap-fileinput/bootstrap-fileinput.js')}}" type="text/javascript"></script>
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">
@@ -293,5 +300,12 @@
   swal("Error!", "Please enter correct current password!", "error");
 </script>
 @endif
+
+@if ($message = Session::get('success_user_pic'))
+<script type="text/javascript">
+  swal("Success!", "Change avatar image success!", "success");
+</script>
+@endif
+
 
 @stop('scripts')
