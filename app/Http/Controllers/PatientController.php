@@ -16,7 +16,13 @@ class PatientController extends Controller
      */
     public function index()
     {
+      $objs = DB::table('patients')
+            ->where('user_id', Auth::user()->id)
+            ->orderBy('id', 'desc')
+            ->get();
 
+      $data['objs'] = $objs;
+      return view('patient_list', $data);
     }
 
     public function add_patient(){

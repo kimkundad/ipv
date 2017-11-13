@@ -60,6 +60,7 @@
                             </div></a>
                         </div>
                         <div class="col-md-3">
+                          <a href="{{url('patient')}}">
                             <div class="portlet light">
                                 <div class="card-icon">
                                     <i class="icon-book-open font-green-haze theme-font"></i>
@@ -70,7 +71,7 @@
                                 <div class="card-desc">
 
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                         <div class="col-md-3">
                           <a href="{{url('user_profile')}}">
