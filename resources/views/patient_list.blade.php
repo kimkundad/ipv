@@ -77,9 +77,7 @@
 
                                     </div>
 
-                                    <div class="actions">
-                                      <a href="javascript:;" class="btn btn-icon-only red"><i class="icon-wrench"></i></a>
-                                    </div>
+                                    
                                 </div>
               </div>
 
