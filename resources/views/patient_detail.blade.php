@@ -69,9 +69,14 @@
                                     </div>
 
                                     <div class="actions">
-                                      <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                          <i class="icon-wrench"></i>
-                                      </a>
+                                      
+
+                                      <div class="btn-group btn-group-devided" data-toggle="buttons">
+
+                                            <label class="btn  red btn-outline btn-circle btn-sm">
+                                                <input type="radio" name="options" class="toggle" id="option2"><i class="icon-wrench"></i></label>
+                                        </div>
+
                                     </div>
 
 
