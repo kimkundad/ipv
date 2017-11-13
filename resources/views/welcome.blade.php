@@ -46,6 +46,7 @@
         <br>
         <div class="row margin-bottom-20">
                         <div class="col-md-3">
+                          <a href="{{url('add_patient')}}">
                             <div class="portlet light">
                                 <div class="card-icon">
                                     <i class="icon-user-follow font-red-sunglo theme-font"></i>
@@ -56,7 +57,7 @@
                                 <div class="card-desc">
 
                                 </div>
-                            </div>
+                            </div></a>
                         </div>
                         <div class="col-md-3">
                             <div class="portlet light">

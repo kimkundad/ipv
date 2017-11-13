@@ -27,5 +27,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('update_pic', 'User_profileController@update_pic');
   Route::post('image-crop', 'User_profileController@imageCropPost');
   Route::resource('patient', 'PatientController');
+  Route::get('add_patient', 'PatientController@add_patient');
 
 });

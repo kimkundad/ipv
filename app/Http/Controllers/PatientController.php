@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Auth;
 use App\patient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
@@ -15,6 +16,18 @@ class PatientController extends Controller
      */
     public function index()
     {
+
+    }
+
+    public function add_patient(){
+
+      $package = DB::table('patients')
+        ->where('user_id', Auth::user()->id)
+        ->count();
+      $package += 1;
+      date_default_timezone_set("Asia/Bangkok");
+      $data['set_date'] = date("d-m-Y H:i:s");
+      $data['set_num'] = $package;
       $data['method'] = "post";
       return view('add_patient',$data);
     }
