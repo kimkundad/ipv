@@ -65,17 +65,29 @@
                 <div class="portlet-title">
                                     <div class="caption font-red-sunglo">
 
-                                        <span class="caption-subject bold uppercase"> Add Patient</span>
+
+
+                                        <a href="javascript:;" class="btn  default">
+                                            <b><i class="icon-symbol-male"></i> H No. {{$objs->hospital_code}}</b>
+                                        </a>
+
+
+                                        <a href="javascript:;" class="btn  blue">
+                                            <b><i class="icon-symbol-male"></i> Age. {{$objs->age}}</b>
+                                        </a>
+
+
+                                        <a href="javascript:;" class="btn btn-icon-only yellow">
+                                            <i class="icon-symbol-male"></i>
+                                        </a>
+
                                     </div>
 
                                     <div class="actions">
-                                      
 
-                                      <div class="btn-group btn-group-devided" data-toggle="buttons">
-
-                                            <label class="btn  red btn-outline btn-circle btn-sm">
-                                                <input type="radio" name="options" class="toggle" id="option2"><i class="icon-wrench"></i></label>
-                                        </div>
+                                      <a href="javascript:;" class="btn btn-icon-only red">
+                                                                      <i class="icon-wrench"></i>
+                                                                  </a>
 
                                     </div>
 
