@@ -50,7 +50,24 @@ class PatientController extends Controller
      */
     public function store(Request $request)
     {
-        //
+
+      $this->validate($request, [
+         'hospital_code' => 'required',
+         'sex' => 'required',
+         'age' => 'required'
+     ]);
+
+      $obj = new patient();
+      $obj->user_id = Auth::user()->id;
+      $obj->patient_code = $request['patient_code'];
+      $obj->hospital_code = $request['hospital_code'];
+      $obj->sex = $request['sex'];
+      $obj->age = $request['age'];
+      $obj->save();
+      $the_id = $obj->id;
+
+      return redirect(url('patient/'.$the_id));
+
     }
 
     /**
@@ -61,7 +78,10 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-        //
+      $objs = patient::find($id);
+
+      $data['objs'] = $objs;
+      return view('patient_detail', $data);
     }
 
     /**

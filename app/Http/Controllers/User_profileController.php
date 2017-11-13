@@ -40,7 +40,7 @@ class User_profileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+      
     }
 
     /**

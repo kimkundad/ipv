@@ -71,7 +71,7 @@
 
 
                 <div class="portlet-body form">
-                  <form  method="POST" action="{{ url('patient/'.Auth::user()->id) }}">
+                  <form  method="POST" action="{{ url('patient') }}">
                       {{ method_field($method) }}
                       {{ csrf_field() }}
                         <div class="form-group">
@@ -80,11 +80,20 @@
                         <div class="form-group">
                             <label class="control-label">Date</label>
                             <input type="text" name="set_datel" class="form-control" value="{{$set_date}}"/> </div>
-                        <div class="form-group">
-                            <label class="control-label">Hospital Number</label>
-                            <input type="text" placeholder="+1 646 580 DEMO (6284)" name="hospital_code" class="form-control" value="{{ old('hospital_code') }}"/> </div>
 
-                        <div class="form-group">
+                        <div class="form-group{{ $errors->has('hospital_code') ? ' has-error' : '' }}">
+                            <label class="control-label">Hospital Number</label>
+                            <input type="text" placeholder="+1 646 580 DEMO (6284)" name="hospital_code" class="form-control" value="{{ old('hospital_code') }}"/>
+
+                                  @if ($errors->has('hospital_code'))
+                                      <span class="help-block">
+                                          <strong>{{ $errors->first('hospital_code') }}</strong>
+                                      </span>
+                                  @endif
+
+                                </div>
+
+                        <div class="form-group{{ $errors->has('sex') ? ' has-error' : '' }}">
                             <label class="control-label">Sex</label>
                             <label class="checkbox-inline">
                               <input type="radio" name="sex" id="inlineCheckbox1" value="1" > Male
@@ -92,10 +101,24 @@
                             <label class="checkbox-inline">
                               <input type="radio" name="sex" id="inlineCheckbox2" value="2" > Female
                             </label>
+
+                            @if ($errors->has('sex'))
+                                <span class="help-block">
+                                    <strong>{{ $errors->first('sex') }}</strong>
+                                </span>
+                            @endif
+
                             </div>
-                            <div class="form-group">
+                            <div class="form-group{{ $errors->has('age') ? ' has-error' : '' }}">
                                 <label class="control-label">Age</label>
-                                <input type="number" name="age" class="form-control" value="{{ old('age') }}"/> </div>
+                                <input type="number" name="age" class="form-control" value="{{ old('age') }}"/>
+
+                                @if ($errors->has('age'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('age') }}</strong>
+                                    </span>
+                                @endif
+                              </div>
                             <br><br>
                         <div class="margiv-top-10">
                           <button type="submit" class="btn green">
