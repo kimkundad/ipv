@@ -41,13 +41,11 @@
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
-                <a href="{{url('welcome')}}"><i class="icon-home"></i> Home</a>
+                <a href="{{url('welcome')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Home</a>
                 <i class="fa fa-circle"></i>
             </li>
 
-            <li>
-                <span class="active"><i class="icon-user-follow theme-font"></i> Add Patient</span>
-            </li>
+            
         </ul>
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->

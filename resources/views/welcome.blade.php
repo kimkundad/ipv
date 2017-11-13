@@ -20,9 +20,7 @@
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
             <div class="page-title">
-                <h1>Blank Page Layout
-                    <small>blank page layout</small>
-                </h1>
+
             </div>
             <!-- END PAGE TITLE -->
             <!-- BEGIN PAGE TOOLBAR -->
@@ -30,13 +28,7 @@
         </div>
         <!-- END PAGE HEAD-->
         <!-- BEGIN PAGE BREADCRUMB -->
-        <ul class="page-breadcrumb breadcrumb">
-            <li>
-                <a href="#"><i class="icon-home"></i> Home</a>
-                <i class="fa fa-circle"></i>
-            </li>
 
-        </ul>
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
 
