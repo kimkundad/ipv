@@ -68,12 +68,12 @@
 
 
                                         <a href="javascript:;" class="btn  default">
-                                            <b><i class="icon-symbol-male"></i> H No. {{$objs->hospital_code}} 1245668</b>
+                                            <b><i class="icon-graduation"></i> H No. {{$objs->hospital_code}}</b>
                                         </a>
 
 
                                         <a href="javascript:;" class="btn  blue">
-                                            <b><i class="icon-symbol-male"></i> Age. {{$objs->age}}</b>
+                                            <b><i class="icon-ghost"></i> Age. {{$objs->age}}</b>
                                         </a>
 
 
