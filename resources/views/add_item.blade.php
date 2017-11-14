@@ -222,6 +222,7 @@ $(document).ready(function() {
 
   });
 });
+
 var postForm = function() {
 var content = $('textarea[name="comment"]').html($('#summernote').code());
 }
