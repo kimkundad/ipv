@@ -237,7 +237,7 @@
                                                                   <span class="fileinput-new"> Select image </span>
                                                                   <span class="fileinput-exists"> Change </span>
                                                                   <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
-                                                                  <input type="file" id="upload" name="image" accept="image/*" onClick="choosePhoto()"> </span>
+                                                                  <input type="file" id="upload" name="image" accept="image/*" > </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
                                                            </form>
@@ -245,13 +245,11 @@
                                                       <div class="clearfix margin-top-10">
                                                           <span class="label label-danger">NOTE! </span>
                                                           <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
-                                                          File Path: <label id="lblpath">no file path</label>
-                                                          File Uri: <label id="lbluri">no file uri</label>
+
                                                       </div>
                                                   </div>
                                                   <div class="margin-top-10">
-                                                    <input type="button" value="Say hello"
-        onClick="showAndroidToast('Hello Android!')" />
+
                                                     <button type="submit" class="btn green upload-result">
                                                         Save Changes
                                                     </button>
@@ -324,22 +322,6 @@
 
 <script type="text/javascript">
 
-function showAndroidToast(toast) {
-            Android.showToast(toast);
-        }
-        function setFilePath(file) {
-            document.getElementById('lblpath').innerHTML = file;
-            Android.showToast(file);
-        }
-        function setFileUri(uri) {
-            document.getElementById('lbluri').innerHTML = uri;
-            Android.showToast(uri);
-        }
-
-function choosePhoto() {
-            var file = Android.choosePhoto();
-            window.alert("file = " + file);
-        }
 
 $.ajaxSetup({
 headers: {
@@ -374,6 +356,7 @@ $('#upload').on('change', function () {
 });
 
 $('.upload-result').on('click', function (ev) {
+  var file = Android.choosePhoto();
 	$uploadCrop.croppie('result', {
 		type: 'canvas',
 		size: 'viewport'
@@ -381,7 +364,7 @@ $('.upload-result').on('click', function (ev) {
 		$.ajax({
 			url: "{{url('image-crop')}}",
 			type: "POST",
-			data: {"image":resp},
+			data: {"image":file},
 			success: function (data) {
 				swal("Success!", "Change avatar image success!", "success");
 
