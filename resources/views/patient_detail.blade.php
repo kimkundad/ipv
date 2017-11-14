@@ -128,7 +128,7 @@
 
                             </div>
                             <div class="portlet-body">
-                                <div id="chart_2" class="chart"> </div>
+                                <div id="flot-placeholder" class="chart"> </div>
                             </div>
                         </div>
 
@@ -189,8 +189,25 @@
 @section('scripts')
 <script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
 
-<script src="{{url('assets/pages/scripts/charts-flotcharts.min.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
+        var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
 
+        var dataset = [{label: "line1",data: data}];
+
+        var options = {
+            series: {
+                lines: { show: true },
+                points: {
+                    radius: 3,
+                    show: true
+                }
+            }
+        };
+
+        $(document).ready(function () {
+            $.plot($("#flot-placeholder"), dataset, options);
+        });
+    </script>
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">
