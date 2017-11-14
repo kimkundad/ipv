@@ -319,6 +319,7 @@
 <script type="text/javascript">
 
         function choosePhoto() {
+          var file = Android.choosePhoto();
           alert("555+++");
         }
     </script>
