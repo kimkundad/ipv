@@ -250,6 +250,8 @@
                                                       </div>
                                                   </div>
                                                   <div class="margin-top-10">
+                                                    <input type="button" value="Say hello"
+        onClick="showAndroidToast('Hello Android!')" />
                                                     <button type="submit" class="btn green upload-result">
                                                         Save Changes
                                                     </button>
