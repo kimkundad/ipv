@@ -111,7 +111,7 @@ class PatientController extends Controller
        $obj->set_date = $request['set_date'];
        $obj->save();
 
-       return redirect(url('patient/'.$request['cat_id']))->with('success_item','เพิ่มข้อมูลสำเร็จสำเร็จ');
+       return redirect(url('patient/'.$request['cat_id'].'#item-list-product'))->with('success_item','เพิ่มข้อมูลสำเร็จสำเร็จ');
 
 
     }

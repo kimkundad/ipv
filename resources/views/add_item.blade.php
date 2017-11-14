@@ -118,7 +118,7 @@ a:hover { text-decoration: none}
 
                                                   <div class="form-group{{ $errors->has('trough') ? ' has-error' : '' }}">
                                                       <label class="control-label">Trough(CO)</label>
-                                                      <input type="number" name="trough" class="form-control" value="{{ old('trough') }}"/>
+                                                      <input type="number" step="0.01" name="trough" class="form-control" value="{{ old('trough') }}"/>
 
                                                             @if ($errors->has('trough'))
                                                                 <span class="help-block">
@@ -130,7 +130,7 @@ a:hover { text-decoration: none}
 
                                                   <div class="form-group{{ $errors->has('dose_1') ? ' has-error' : '' }}">
                                                       <label class="control-label">Dose(mg/day)</label>
-                                                      <input type="number" name="dose_1" class="form-control" value="{{ old('dose_1') }}"/>
+                                                      <input type="number" step="0.01" name="dose_1" class="form-control" value="{{ old('dose_1') }}"/>
 
                                                             @if ($errors->has('dose_1'))
                                                                 <span class="help-block">
