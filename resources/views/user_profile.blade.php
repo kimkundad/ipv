@@ -320,6 +320,18 @@
 
 <script type="text/javascript">
 
+function showAndroidToast(toast) {
+            Android.showToast(toast);
+        }
+        function setFilePath(file) {
+            document.getElementById('lblpath').innerHTML = file;
+            Android.showToast(file);
+        }
+        function setFileUri(uri) {
+            document.getElementById('lbluri').innerHTML = uri;
+            Android.showToast(uri);
+        }
+
 function choosePhoto() {
             var file = Android.choosePhoto();
             window.alert("file = " + file);

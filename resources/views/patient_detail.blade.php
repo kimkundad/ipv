@@ -167,9 +167,10 @@
                                     <!--BEGIN TABS-->
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1">
-                                          <a href="javascript:;" class="btn btn-circle btn-icon-only blue">
+                                          <a href="javascript:;" class="btn btn-circle red btn-outline">Comment</a>
+                                          <a href="javascript:;" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
-                                                        </a> Add TAC-BID Value
+                                                        </a>
                                           <div class="table-scrollable table-scrollable-borderless">
                                         <table class="table table-hover table-light">
                                             <thead>
@@ -205,10 +206,10 @@
 
                                           </div>
                                         <div class="tab-pane" id="tab_1_2">
-
-                                          <a href="javascript:;" class="btn btn-circle btn-icon-only blue">
+                                          <a href="javascript:;" class="btn btn-circle red btn-outline">Comment</a>
+                                          <a href="javascript:;" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
-                                                        </a> Add TAC-OD Value
+                                                        </a>
 
                                           <div class="table-scrollable table-scrollable-borderless">
                                         <table class="table table-hover table-light">
