@@ -1,9 +1,10 @@
 @extends('layouts.template-main')
-
+<meta name="csrf-token" content="{{ csrf_token() }}" />
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{{url('assets/date/css/bootstrap-datepicker.standalone.css')}}">
 <link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/text/dist/summernote.css')}}" rel="stylesheet">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -146,7 +147,7 @@ a:hover { text-decoration: none}
 
                                                       <div class="form-group">
                                                           <label class="control-label">comment</label>
-                                                          <textarea class="form-control" name="comment" rows="7">@if($num_product == 1){{$objs->comment_1}}@else{{$objs->comment_2}}@endif</textarea>
+                                                          <textarea class="form-control" name="comment" id="summernote" rows="7">@if($num_product == 1){{$objs->comment_1}}@else{{$objs->comment_2}}@endif</textarea>
                                                         </div>
                                                       <br><br>
                                                   <div class="margiv-top-10">
@@ -195,6 +196,36 @@ a:hover { text-decoration: none}
 
 @section('scripts')
 <script src="{{url('assets/date/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+<script src="{{URL::asset('assets/text/dist/summernote.js')}}"></script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  $.ajaxSetup({
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            }
+        });
+  $('#summernote').summernote({
+
+    fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
+    toolbar: [
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']]
+  ],
+    disableDragAndDrop: true,
+    height: 450,
+    minHeight: null,
+    maxHeight: null,
+    focus: true
+
+  });
+});
+var postForm = function() {
+var content = $('textarea[name="comment"]').html($('#summernote').code());
+}
+</script>
 
 <script>
 $.fn.datepicker.defaults.format = "dd-mm-yyyy";
