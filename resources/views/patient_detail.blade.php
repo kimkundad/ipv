@@ -217,6 +217,7 @@
 
                                         </tbody>
                                       </table>
+                                      {{ $message_1->links() }}
                                     </div>
 
                                           </div>
@@ -266,6 +267,7 @@
 
                                         </tbody>
                                       </table>
+                                      {{ $message_2->links() }}
                                     </div>
 
                                             </div>
