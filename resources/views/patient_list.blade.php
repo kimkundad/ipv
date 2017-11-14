@@ -81,8 +81,8 @@ a:hover { text-decoration: none}
                                       <div class="portlet light bordered">
                                           <div class="portlet-title" style="margin-bottom: 0px;">
                                               <div class="caption">
-                                                  <i class="icon-share font-dark"></i>
-                                                  <span class="caption-subject font-dark bold uppercase">{{$obj->patient_code}}</span>
+                                                  <a href="{{('patient/'.$obj->id)}}"><i class="icon-share font-dark"></i>
+                                                  <span class="caption-subject font-dark bold uppercase">{{$obj->patient_code}}</span></a>
                                               </div>
                                               <div class="actions">
 
