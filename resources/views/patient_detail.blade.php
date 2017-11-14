@@ -142,7 +142,7 @@
 
 
                             <!-- BEGIN PORTLET-->
-                            <div class="portlet light bordered">
+                            <div class="portlet light bordered" style="margin-bottom: 120px;">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
                                         <i class="icon-globe font-dark hide"></i>
