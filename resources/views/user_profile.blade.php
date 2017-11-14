@@ -371,7 +371,7 @@ $('.upload-result').on('click', function (ev) {
 			success: function (data) {
 				swal("Success!", "Change avatar image success!", "success");
 
-        var delayMillis = 3000; //1 second
+        var delayMillis = 3000; 
 
         setTimeout(function() {
           window.location = "{{url('user_profile')}}";

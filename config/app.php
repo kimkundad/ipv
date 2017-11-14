@@ -164,7 +164,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         Intervention\Image\ImageServiceProvider::class,
-        RenatoMarinho\LaravelPageSpeed\ServiceProvider::class,
 
         /*
          * Package Service Providers...
