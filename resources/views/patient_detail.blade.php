@@ -40,6 +40,9 @@
 .small-date{
   font-size: 12px!important;
 }
+.table td, .table th {
+    font-size: 13px;
+}
 </style>
 @stop('stylesheet')
 
