@@ -237,7 +237,7 @@
                                                                   <span class="fileinput-new"> Select image </span>
                                                                   <span class="fileinput-exists"> Change </span>
                                                                   <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
-                                                                  <input type="file"  name="image" accept="image/*" onClick="choosePhoto()"> </span>
+                                                                  <input type="file" id="upload" name="image"> </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
 
@@ -316,23 +316,7 @@
 
 @section('scripts')
 <script src="{{url('assets/croppie/croppie.js')}}" type="text/javascript"></script>
-<script type="text/javascript">
-        function showAndroidToast(toast) {
-            Android.showToast(toast);
-        }
-        function setFilePath(file) {
-            document.getElementById('lblpath').innerHTML = file;
-            Android.showToast(file);
-        }
-        function setFileUri(uri) {
-            document.getElementById('lbluri').innerHTML = uri;
-            Android.showToast(uri);
-        }
-        function choosePhoto() {
-            var file = Android.choosePhoto();
-            window.alert("file = " + file);
-        }
-    </script>
+
 
 <script type="text/javascript">
 
