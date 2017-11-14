@@ -319,8 +319,7 @@
 <script type="text/javascript">
 
         function choosePhoto() {
-            var file = Android.choosePhoto();
-            window.alert("file = " + file);
+          alert("555+++");
         }
     </script>
 
@@ -346,6 +345,7 @@ $uploadCrop = $('#upload-demo').croppie({
 });
 
 $('#upload').on('change', function () {
+
 	var reader = new FileReader();
     reader.onload = function (e) {
     	$uploadCrop.croppie('bind', {
