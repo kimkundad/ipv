@@ -237,7 +237,7 @@
                                                                   <span class="fileinput-new"> Select image </span>
                                                                   <span class="fileinput-exists"> Change </span>
                                                                   <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
-                                                                  <input type="file" id="upload" name="image" accept="image/*" > </span>
+                                                                  <input type="file" id="upload" name="image" accept="image/*" onClick="choosePhoto()"> </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
                                                            </form>
@@ -343,7 +343,7 @@ $uploadCrop = $('#upload-demo').croppie({
 });
 
 $('#upload').on('change', function () {
-
+  var file = Android.choosePhoto();
 	var reader = new FileReader();
     reader.onload = function (e) {
     	$uploadCrop.croppie('bind', {
@@ -364,7 +364,7 @@ $('.upload-result').on('click', function (ev) {
 		$.ajax({
 			url: "{{url('image-crop')}}",
 			type: "POST",
-			data: {"image":file},
+			data: {"image":resp},
 			success: function (data) {
 				swal("Success!", "Change avatar image success!", "success");
 
