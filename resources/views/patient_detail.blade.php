@@ -3,6 +3,7 @@
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/global/css/plugins.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -22,6 +23,11 @@
     width: 160px;
     white-space: nowrap;
     padding-top: 10px;
+}
+.btn.blue:not(.btn-outline) {
+    color: #FFF;
+    background-color: #3598dc;
+    border-color: #3598dc;
 }
 </style>
 @stop('stylesheet')
@@ -161,7 +167,9 @@
                                     <!--BEGIN TABS-->
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1">
-
+                                          <a href="javascript:;" class="btn btn-circle btn-icon-only blue">
+                                                            <i class="fa fa-plus" style="line-height: 17px;"></i>
+                                                        </a> Add TAC-BID Value
                                           <div class="table-scrollable table-scrollable-borderless">
                                         <table class="table table-hover table-light">
                                             <thead>
@@ -190,56 +198,17 @@
                                                               </div>
                                                 </td>
                                             </tr>
-                                            <tr>
 
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Nick</a>
-                                                </td>
-                                                <td> $560 </td>
-                                                <td> 12 </td>
-                                                <td> 24 </td>
-                                                <td>
-                                                  <div class="btn-group btn-group-circle">
-                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
-                                                              </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Tim</a>
-                                                </td>
-                                                <td> $1,345 </td>
-                                                <td> 450 </td>
-                                                <td> 46 </td>
-                                                <td>
-                                                  <div class="btn-group btn-group-circle">
-                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
-                                                              </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Tom</a>
-                                                </td>
-                                                <td> $645 </td>
-                                                <td> 50 </td>
-                                                <td> 89 </td>
-                                                <td>
-                                                  <div class="btn-group btn-group-circle">
-                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
-                                                              </div>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
+                                        </tbody>
+                                      </table>
                                     </div>
 
                                           </div>
                                         <div class="tab-pane" id="tab_1_2">
+
+                                          <a href="javascript:;" class="btn btn-circle btn-icon-only blue">
+                                                            <i class="fa fa-plus" style="line-height: 17px;"></i>
+                                                        </a> Add TAC-OD Value
 
                                           <div class="table-scrollable table-scrollable-borderless">
                                         <table class="table table-hover table-light">
@@ -261,46 +230,17 @@
                                                 <td> 45 </td>
                                                 <td> 124 </td>
                                                 <td>
-                                                    <span class="bold theme-font">80%</span>
+                                                  <div class="mt-action-buttons ">
+                                                  <div class="btn-group btn-group-circle" style="width:84px">
+                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
+                                                              </div>
                                                 </td>
                                             </tr>
-                                            <tr>
 
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Nick</a>
-                                                </td>
-                                                <td> $560 </td>
-                                                <td> 12 </td>
-                                                <td> 24 </td>
-                                                <td>
-                                                    <span class="bold theme-font">67%</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Tim</a>
-                                                </td>
-                                                <td> $1,345 </td>
-                                                <td> 450 </td>
-                                                <td> 46 </td>
-                                                <td>
-                                                    <span class="bold theme-font">98%</span>
-                                                </td>
-                                            </tr>
-                                            <tr>
-
-                                                <td>
-                                                    <a href="javascript:;" class="primary-link">Tom</a>
-                                                </td>
-                                                <td> $645 </td>
-                                                <td> 50 </td>
-                                                <td> 89 </td>
-                                                <td>
-                                                    <span class="bold theme-font">58%</span>
-                                                </td>
-                                            </tr>
-                                        </tbody></table>
+                                        </tbody>
+                                      </table>
                                     </div>
 
                                             </div>
