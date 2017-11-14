@@ -18,6 +18,15 @@
 .portlet.light.bordered>.portlet-title {
     border: none;
 }
+.alert {
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}
+.portlet.light {
+    padding: 15px 20px 1px;
+    background-color: #fff;
+}
 </style>
 @stop('stylesheet')
 
@@ -60,26 +69,58 @@
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
         <div class="row">
-            <div class="col-md-12">
 
 
               @if(isset($objs))
                       @foreach($objs as $obj)
 
-              <div class="portlet light bordered">
-                <div class="portlet-title">
-                                    <div class="caption font-red-sunglo">
-                                        <a href="javascript:;" class="btn  default"><b><i class="icon-graduation"></i> H No. {{$obj->hospital_code}}</b></a>
 
-                                        <a href="javascript:;" class="btn  blue"><b><i class="icon-ghost"></i> Age. {{$obj->age}}</b></a>
+                      <div class="col-md-6">
+                                      <!-- BEGIN PORTLET-->
+                                      <div class="portlet light bordered">
+                                          <div class="portlet-title" style="margin-bottom: 0px;">
+                                              <div class="caption">
+                                                  <i class="icon-share font-dark"></i>
+                                                  <span class="caption-subject font-dark bold uppercase">{{$obj->patient_code}}</span>
+                                              </div>
+                                              <div class="actions">
 
-                                        <a href="javascript:;" class="btn btn-icon-only yellow"><i class="icon-symbol-male"></i></a>
+                                                @if($obj->sex == 1)
+                                                <a class="btn btn-circle btn-icon-only btn-danger" href="javascript:;">
+                                                    <i class="icon-symbol-male"></i>
+                                                </a>
+                                                @else
+                                                <a class="btn btn-circle btn-icon-only btn-success" href="javascript:;">
+                                                    <i class="icon-symbol-female"></i>
+                                                </a>
+                                                @endif
 
-                                    </div>
 
-                                    
-                                </div>
-              </div>
+
+                                                  <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                                      <i class="icon-wrench"></i>
+                                                  </a>
+
+
+                                              </div>
+                                          </div>
+                                          <div class="portlet-body">
+
+                                              <div class="alert alert-success">
+                                                  <strong>Hospital No.</strong> {{$obj->hospital_code}} </div>
+                                              <div class="alert alert-info">
+                                                  <strong>Age. </strong> {{$obj->age}} </div>
+
+
+                                          </div>
+                                      </div>
+                                      <!-- END PORTLET-->
+
+
+
+                                  </div>
+
+
 
               @endforeach
                       @endif
@@ -88,8 +129,6 @@
 
 
 
-
-            </div>
         </div>
         <!-- END PAGE BASE CONTENT -->
 
