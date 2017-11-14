@@ -183,7 +183,7 @@
                                             <thead>
                                                 <tr class="uppercase">
                                                     <th> # </th>
-                                                    <th> Date </th>
+                                                    <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp </th>
                                                     <th> Trough(CO) </th>
                                                     <th> Dose(mg/day) </th>
                                                     <th> CO/D </th>
@@ -198,7 +198,7 @@
                                                 <td>
                                                     <a href="javascript:;" class="primary-link">{{$i}}</a>
                                                 </td>
-                                                <td> {{$item_1->set_date}} </td>
+                                                <td style="font-size: 12px;"> {{$item_1->set_date}} </td>
                                                 <td> {{$item_1->trough}} </td>
                                                 <td> {{$item_1->dose_1}} </td>
                                                 <td>  </td>
@@ -231,7 +231,7 @@
                                             <thead>
                                               <tr class="uppercase">
                                                   <th> # </th>
-                                                  <th> Date </th>
+                                                  <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp </th>
                                                   <th> Trough(CO) </th>
                                                   <th> Dose(mg/day) </th>
                                                   <th> CO/D </th>
@@ -247,7 +247,7 @@
                                                 <td>
                                                     <a href="javascript:;" class="primary-link">{{$j}}</a>
                                                 </td>
-                                                <td> {{$item_2->set_date}} </td>
+                                                <td style="font-size: 12px;"> {{$item_2->set_date}} </td>
                                                 <td> {{$item_2->trough}} </td>
                                                 <td> {{$item_2->dose_1}} </td>
                                                 <td>  </td>
