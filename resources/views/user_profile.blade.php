@@ -245,6 +245,8 @@
                                                       <div class="clearfix margin-top-10">
                                                           <span class="label label-danger">NOTE! </span>
                                                           <span>Attached image thumbnail is supported in Latest Firefox, Chrome, Opera, Safari and Internet Explorer 10 only </span>
+                                                          File Path: <label id="lblpath">no file path</label>
+                                                          File Uri: <label id="lbluri">no file uri</label>
                                                       </div>
                                                   </div>
                                                   <div class="margin-top-10">
