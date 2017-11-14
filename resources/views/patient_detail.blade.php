@@ -201,7 +201,7 @@
                                                 <td style="font-size: 12px;"> {{$item_1->set_date}} </td>
                                                 <td> {{$item_1->trough}} </td>
                                                 <td> {{$item_1->dose_1}} </td>
-                                                <td> {{$item_1->trough/$item_1->dose_1}} </td>
+                                                <td> {{number_format($item_1->trough/$item_1->dose_1, 2, '.', '')}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
@@ -251,7 +251,7 @@
                                                 <td style="font-size: 12px;"> {{$item_2->set_date}} </td>
                                                 <td> {{$item_2->trough}} </td>
                                                 <td> {{$item_2->dose_1}} </td>
-                                                <td> {{$item_2->trough/$item_2->dose_1}} </td>
+                                                <td> {{number_format($item_2->trough/$item_2->dose_1, 2, '.', '')}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
