@@ -36,6 +36,10 @@
     border: 0;
     border-bottom: 1px solid #F2F5F8;
 }
+
+.small-date{
+  font-size: 12px!important;
+}
 </style>
 @stop('stylesheet')
 
@@ -207,7 +211,7 @@
                                             <thead>
                                                 <tr class="uppercase">
                                                     <th> # </th>
-                                                    <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp </th>
+                                                    <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp&nbsp </th>
                                                     <th> Trough(CO) </th>
                                                     <th> Dose(mg/day) </th>
                                                     <th> CO/D </th>
@@ -222,7 +226,7 @@
                                                 <td>
                                                     <a href="javascript:;" class="primary-link">{{$i}}</a>
                                                 </td>
-                                                <td style="font-size: 12px;"> {{$item_1->set_date}} </td>
+                                                <td class="small-date"> {{$item_1->set_date}} </td>
                                                 <td> {{$item_1->trough}} </td>
                                                 <td> {{$item_1->dose_1}} </td>
                                                 <td> {{number_format($item_1->trough/$item_1->dose_1, 2, '.', '')}} </td>
@@ -279,7 +283,7 @@
                                             <thead>
                                               <tr class="uppercase">
                                                   <th> # </th>
-                                                  <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp </th>
+                                                  <th>&nbsp&nbsp&nbsp&nbsp&nbsp Date &nbsp&nbsp&nbsp&nbsp&nbsp </th>
                                                   <th> Trough(CO) </th>
                                                   <th> Dose(mg/day) </th>
                                                   <th> CO/D </th>
@@ -295,7 +299,7 @@
                                                 <td>
                                                     <a href="javascript:;" class="primary-link">{{$j}}</a>
                                                 </td>
-                                                <td style="font-size: 12px;"> {{$item_2->set_date}} </td>
+                                                <td class="small-date"> {{$item_2->set_date}} </td>
                                                 <td> {{$item_2->trough}} </td>
                                                 <td> {{$item_2->dose_1}} </td>
                                                 <td> {{number_format($item_2->trough/$item_2->dose_1, 2, '.', '')}} </td>

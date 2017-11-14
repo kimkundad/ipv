@@ -202,10 +202,10 @@ a:hover { text-decoration: none}
 <script type="text/javascript">
 $(document).ready(function() {
   $.ajaxSetup({
-            headers: {
-                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-            }
-        });
+  headers: {
+    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+  }
+});
   $('#summernote').summernote({
 
     fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New'],
