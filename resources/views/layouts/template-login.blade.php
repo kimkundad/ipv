@@ -93,7 +93,7 @@
 
 
         <div class="logo">
-          <img src="{{url('assets/img/AW_app_ipv_calculator_top.png')}}" style="height: 60px;" alt="">
+          <img src="{{url('assets/img/AW_app_ipv_calculator_top.png')}}" style="height: 40px;" alt="">
           <a href="#">
             <br>
               <img src="{{url('assets/img/AW_app_ipv_calculator_2.png')}}" style="height: 40px; margin-top: 20px;" alt=""> </a>
