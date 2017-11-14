@@ -29,7 +29,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::resource('patient', 'PatientController');
   Route::get('add_patient', 'PatientController@add_patient');
   Route::get('add_item-{id}-{sub_id}', 'PatientController@add_item');
-  Route::post('patient_item', 'User_profileController@patient_item');
+  Route::post('patient_item', 'PatientController@patient_item');
 
 
 });
