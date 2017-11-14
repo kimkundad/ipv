@@ -178,7 +178,7 @@
                                                     <th> Trough(CO) </th>
                                                     <th> Dose(mg/day) </th>
                                                     <th> CO/D </th>
-                                                    <th> Action </th>
+                                                    <th>  </th>
                                                 </tr>
                                             </thead>
                                             <tbody><tr>
@@ -218,7 +218,7 @@
                                                   <th> Trough(CO) </th>
                                                   <th> Dose(mg/day) </th>
                                                   <th> CO/D </th>
-                                                  <th> Action </th>
+                                                  <th>  </th>
                                               </tr>
                                             </thead>
                                             <tbody><tr>
