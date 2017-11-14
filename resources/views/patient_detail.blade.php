@@ -154,12 +154,144 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1">
 
-                                          111111111111111111111
+                                          <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <thead>
+                                                <tr class="uppercase">
+                                                    <th> # </th>
+                                                    <th> Trough(CO) </th>
+                                                    <th> Dose(mg/day) </th>
+                                                    <th> CO/D </th>
+                                                    <th>  </th>
+                                                </tr>
+                                            </thead>
+                                            <tbody><tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Brain</a>
+                                                </td>
+                                                <td> $345 </td>
+                                                <td> 45 </td>
+                                                <td> 124 </td>
+                                                <td>
+                                                  <div class="btn-group btn-group-circle">
+                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Nick</a>
+                                                </td>
+                                                <td> $560 </td>
+                                                <td> 12 </td>
+                                                <td> 24 </td>
+                                                <td>
+                                                  <div class="btn-group btn-group-circle">
+                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Tim</a>
+                                                </td>
+                                                <td> $1,345 </td>
+                                                <td> 450 </td>
+                                                <td> 46 </td>
+                                                <td>
+                                                  <div class="btn-group btn-group-circle">
+                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Tom</a>
+                                                </td>
+                                                <td> $645 </td>
+                                                <td> 50 </td>
+                                                <td> 89 </td>
+                                                <td>
+                                                  <div class="btn-group btn-group-circle">
+                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
 
                                           </div>
                                         <div class="tab-pane" id="tab_1_2">
 
-                                          2222222222222222222222222222
+                                          <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <thead>
+                                              <tr class="uppercase">
+                                                  <th> # </th>
+                                                  <th> Trough(CO) </th>
+                                                  <th> Dose(mg/day) </th>
+                                                  <th> CO/D </th>
+                                                  <th>  </th>
+                                              </tr>
+                                            </thead>
+                                            <tbody><tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Brain</a>
+                                                </td>
+                                                <td> $345 </td>
+                                                <td> 45 </td>
+                                                <td> 124 </td>
+                                                <td>
+                                                    <span class="bold theme-font">80%</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Nick</a>
+                                                </td>
+                                                <td> $560 </td>
+                                                <td> 12 </td>
+                                                <td> 24 </td>
+                                                <td>
+                                                    <span class="bold theme-font">67%</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Tim</a>
+                                                </td>
+                                                <td> $1,345 </td>
+                                                <td> 450 </td>
+                                                <td> 46 </td>
+                                                <td>
+                                                    <span class="bold theme-font">98%</span>
+                                                </td>
+                                            </tr>
+                                            <tr>
+
+                                                <td>
+                                                    <a href="javascript:;" class="primary-link">Tom</a>
+                                                </td>
+                                                <td> $645 </td>
+                                                <td> 50 </td>
+                                                <td> 89 </td>
+                                                <td>
+                                                    <span class="bold theme-font">58%</span>
+                                                </td>
+                                            </tr>
+                                        </tbody></table>
+                                    </div>
 
                                             </div>
                                     </div>
