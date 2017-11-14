@@ -1,5 +1,5 @@
 @extends('layouts.template-main')
-<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
 <link rel="stylesheet" href="{{url('assets/date/css/bootstrap-datepicker.standalone.css')}}">
