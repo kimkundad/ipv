@@ -90,7 +90,7 @@ class PatientController extends Controller
      ]);
 
        $id = $request['cat_id'];
-       if($request['comment'] == 1){
+       if($request['set_comment'] == 1){
 
          $package = patient::find($id);
          $package->comment_1 = $request['comment'];
@@ -109,6 +109,7 @@ class PatientController extends Controller
        $obj->trough = $request['trough'];
        $obj->dose_1 = $request['dose_1'];
        $obj->set_date = $request['set_date'];
+       $obj->item_1 = $request['set_comment'];
        $obj->save();
 
        return redirect(url('patient/'.$request['cat_id'].'#item-list-product'))->with('success_item','เพิ่มข้อมูลสำเร็จสำเร็จ');
@@ -137,8 +138,14 @@ class PatientController extends Controller
      */
     public function show($id)
     {
+      $message_user = DB::table('patientitems')
+      ->where('cat_id', $id)
+      ->orderBy('id', 'desc')
+      ->paginate(15);
+
       $objs = patient::find($id);
 
+      $data['item'] = $message_user;
       $data['objs'] = $objs;
       return view('patient_detail', $data);
     }
