@@ -193,7 +193,7 @@
                                                           <h4 class="modal-title">Comment</h4>
                                                       </div>
                                                       <div class="modal-body">
-                                                        {{$objs->comment_1}}
+                                                        {!! $objs->comment_1 !!}
                                                       </div>
                                                       <div class="modal-footer">
                                                           <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
@@ -265,7 +265,7 @@
                                                           <h4 class="modal-title">Comment</h4>
                                                       </div>
                                                       <div class="modal-body">
-                                                        {{$objs->comment_2}}
+                                                        {!! $objs->comment_2 !!}
                                                       </div>
                                                       <div class="modal-footer">
                                                           <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
