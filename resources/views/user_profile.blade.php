@@ -222,7 +222,7 @@
                                             </form>  -->
 
 
-                                      
+
 
 
 
@@ -231,16 +231,16 @@
                                                   <div class="form-group">
                                                       <div class="fileinput fileinput-new" data-provides="fileinput">
                                                           <div id="upload-demo" style="max-width: 280px;"></div>
-                                                          <form action="image://choose">
+
                                                           <div>
                                                               <span class="btn default btn-file">
                                                                   <span class="fileinput-new"> Select image </span>
                                                                   <span class="fileinput-exists"> Change </span>
                                                                   <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
-                                                                  <input type="file" id="upload" name="image" accept="image/*"> </span>
+                                                                  <input type="file" id="upload" name="image" accept="image/*" onClick="choosePhoto()"> </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
-                                                          </form>
+
                                                       </div>
                                                       <div class="clearfix margin-top-10">
                                                           <span class="label label-danger">NOTE! </span>
@@ -316,7 +316,13 @@
 
 @section('scripts')
 <script src="{{url('assets/croppie/croppie.js')}}" type="text/javascript"></script>
+<script type="text/javascript">
 
+        function choosePhoto() {
+            var file = Android.choosePhoto();
+            window.alert("file = " + file);
+        }
+    </script>
 
 <script type="text/javascript">
 
