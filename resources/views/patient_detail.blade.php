@@ -103,6 +103,57 @@
 
 
                       </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                      <div class="col-lg-6 col-xs-12 col-sm-12">
+                            <!-- BEGIN PORTLET-->
+                            <div class="portlet light bordered">
+                                <div class="portlet-title tabbable-line">
+                                    <div class="caption">
+                                        <i class="icon-globe font-dark hide"></i>
+                                        <span class="caption-subject font-dark bold uppercase">Product</span>
+                                    </div>
+                                    <ul class="nav nav-tabs">
+                                        <li class="active">
+                                            <a href="#tab_1_1" class="active" data-toggle="tab" aria-expanded="true"> TAC-BID </a>
+                                        </li>
+                                        <li class="">
+                                            <a href="#tab_1_2" data-toggle="tab" aria-expanded="false"> TAC-OD </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="portlet-body">
+                                    <!--BEGIN TABS-->
+                                    <div class="tab-content">
+                                        <div class="tab-pane active" id="tab_1_1">
+
+                                          111111111111111111111
+
+                                          </div>
+                                        <div class="tab-pane" id="tab_1_2">
+
+                                          2222222222222222222222222222
+
+                                            </div>
+                                    </div>
+                                    <!--END TABS-->
+                                </div>
+                            </div>
+                            <!-- END PORTLET-->
+                        </div>
+
         </div>
         <!-- END PAGE BASE CONTENT -->
 

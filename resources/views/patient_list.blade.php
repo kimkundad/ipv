@@ -27,6 +27,7 @@
     padding: 15px 20px 1px;
     background-color: #fff;
 }
+a:hover { text-decoration: none}
 </style>
 @stop('stylesheet')
 
