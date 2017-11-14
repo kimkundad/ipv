@@ -231,7 +231,7 @@
                                                   <div class="form-group">
                                                       <div class="fileinput fileinput-new" data-provides="fileinput">
                                                           <div id="upload-demo" style="max-width: 280px;"></div>
-
+                                                          <form enctype="multipart/form-data">
                                                           <div>
                                                               <span class="btn default btn-file">
                                                                   <span class="fileinput-new"> Select image </span>
@@ -240,7 +240,7 @@
                                                                   <input type="file" id="upload" name="image" accept="image/*" > </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
-
+                                                           </form>
                                                       </div>
                                                       <div class="clearfix margin-top-10">
                                                           <span class="label label-danger">NOTE! </span>
