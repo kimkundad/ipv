@@ -10,7 +10,7 @@
 <!-- BEGIN THEME GLOBAL SCRIPTS -->
 <script src="{{url('assets/global/scripts/app.min.js')}}" type="text/javascript"></script>
 <!-- END THEME GLOBAL SCRIPTS -->
-<script src="{{url('assets/pages/scripts/charts-flotcharts.min.js')}}" type="text/javascript"></script>
+
 <!-- BEGIN THEME LAYOUT SCRIPTS -->
 <script src="{{url('./assets/layouts/layout4/scripts/layout.min.js')}}" type="text/javascript"></script>
 <script src="{{url('assets/layouts/layout4/scripts/demo.min.js')}}" type="text/javascript"></script>
