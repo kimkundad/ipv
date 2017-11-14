@@ -42,7 +42,7 @@
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
-                <a href="{{url('welcome')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list
+                <a href="{{url('patient')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list
 
                                                                     </a>
                 <i class="fa fa-circle"></i>
@@ -59,50 +59,50 @@
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
         <div class="row">
-            <div class="col-md-12">
+          <div class="col-md-6">
+                          <!-- BEGIN PORTLET-->
+                          <div class="portlet light bordered">
+                              <div class="portlet-title" style="margin-bottom: 0px;">
+                                  <div class="caption">
+                                      <i class="icon-share font-dark"></i>
+                                      <span class="caption-subject font-dark bold uppercase">{{$objs->patient_code}}</span>
+                                  </div>
+                                  <div class="actions">
 
-              <div class="portlet light bordered">
-                <div class="portlet-title">
-                                    <div class="caption font-red-sunglo">
-
-
-
-                                        <a href="javascript:;" class="btn  default">
-                                            <b><i class="icon-graduation"></i> H No. {{$objs->hospital_code}}</b>
-                                        </a>
-
-
-                                        <a href="javascript:;" class="btn  blue">
-                                            <b><i class="icon-ghost"></i> Age. {{$objs->age}}</b>
-                                        </a>
-
-
-                                        <a href="javascript:;" class="btn btn-icon-only yellow">
-                                            <i class="icon-symbol-male"></i>
-                                        </a>
-
-                                    </div>
-
-                                    <div class="actions">
-
-                                      <a href="javascript:;" class="btn btn-icon-only red">
-                                                                      <i class="icon-wrench"></i>
-                                                                  </a>
-
-                                    </div>
+                                    @if($objs->sex == 1)
+                                    <a class="btn btn-circle btn-icon-only btn-danger" href="javascript:;">
+                                        <i class="icon-symbol-male"></i>
+                                    </a>
+                                    @else
+                                    <a class="btn btn-circle btn-icon-only btn-success" href="javascript:;">
+                                        <i class="icon-symbol-female"></i>
+                                    </a>
+                                    @endif
 
 
-                                </div>
+
+                                      <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
+                                          <i class="icon-wrench"></i>
+                                      </a>
 
 
-                <div class="portlet-body form">
+                                  </div>
+                              </div>
+                              <div class="portlet-body">
 
-                </div>
+                                  <div class="alert alert-success">
+                                      <strong>Hospital No.</strong> {{$objs->hospital_code}} </div>
+                                  <div class="alert alert-info">
+                                      <strong>Age. </strong> {{$objs->age}} </div>
 
-              </div>
+
+                              </div>
+                          </div>
+                          <!-- END PORTLET-->
 
 
-            </div>
+
+                      </div>
         </div>
         <!-- END PAGE BASE CONTENT -->
 
