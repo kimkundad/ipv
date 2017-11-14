@@ -15,6 +15,14 @@
 .croppie-container {
     padding: 30px 0px 30px 0px;
 }
+.mt-action-buttons {
+    vertical-align: top;
+    display: table-cell;
+    text-align: center;
+    width: 160px;
+    white-space: nowrap;
+    padding-top: 10px;
+}
 </style>
 @stop('stylesheet')
 
@@ -174,9 +182,11 @@
                                                 <td> 45 </td>
                                                 <td> 124 </td>
                                                 <td>
-                                                  <div class="btn-group btn-group-circle">
+                                                  <div class="mt-action-buttons ">
+                                                  <div class="btn-group btn-group-circle" style="width:84px">
                                                                   <button type="button" class="btn btn-outline green btn-sm">Edit</button>
                                                                   <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                              </div>
                                                               </div>
                                                 </td>
                                             </tr>
