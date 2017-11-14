@@ -109,7 +109,7 @@ class PatientController extends Controller
        $obj->trough = $request['trough'];
        $obj->dose_1 = $request['dose_1'];
        $obj->set_date = $request['set_date'];
-       $obj->item_1 = $request['set_comment'];
+       $obj->item1 = $request['set_comment'];
        $obj->save();
 
        return redirect(url('patient/'.$request['cat_id'].'#item-list-product'))->with('success_item','เพิ่มข้อมูลสำเร็จสำเร็จ');
@@ -138,14 +138,33 @@ class PatientController extends Controller
      */
     public function show($id)
     {
-      $message_user = DB::table('patientitems')
+      $message_1 = DB::table('patientitems')
       ->where('cat_id', $id)
+      ->where('item1', 1)
       ->orderBy('id', 'desc')
       ->paginate(15);
 
+
+
+      $message_2 = DB::table('patientitems')
+      ->select(
+          'patientitems.*'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->orderBy('id', 'desc')
+      ->paginate(15);
+
+      $i = 0;
+      $j = 0;
+
       $objs = patient::find($id);
 
-      $data['item'] = $message_user;
+      $data['i'] = $i;
+      $data['j'] = $j;
+
+      $data['message_1'] = $message_1;
+      $data['message_2'] = $message_2;
       $data['objs'] = $objs;
       return view('patient_detail', $data);
     }

@@ -29,6 +29,13 @@
     background-color: #3598dc;
     border-color: #3598dc;
 }
+.table.table-light>thead>tr>th {
+    font-weight: 600;
+    font-size: 13px;
+    color: #93a2a9;
+    border: 0;
+    border-bottom: 1px solid #F2F5F8;
+}
 </style>
 @stop('stylesheet')
 
@@ -176,29 +183,37 @@
                                             <thead>
                                                 <tr class="uppercase">
                                                     <th> # </th>
+                                                    <th> Date </th>
                                                     <th> Trough(CO) </th>
                                                     <th> Dose(mg/day) </th>
                                                     <th> CO/D </th>
                                                     <th>  </th>
                                                 </tr>
                                             </thead>
-                                            <tbody><tr>
+                                            <tbody>
+                                              @if($message_1 != NULL)
+                                                @foreach($message_1 as $item_1)
+                                              <tr {{$i++}}>
 
                                                 <td>
-                                                    <a href="javascript:;" class="primary-link">Brain</a>
+                                                    <a href="javascript:;" class="primary-link">{{$i}}</a>
                                                 </td>
-                                                <td> $345 </td>
-                                                <td> 45 </td>
-                                                <td> 124 </td>
+                                                <td> {{$item_1->set_date}} </td>
+                                                <td> {{$item_1->trough}} </td>
+                                                <td> {{$item_1->dose_1}} </td>
+                                                <td>  </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
-                                                  <div class="btn-group btn-group-circle" style="width:84px">
-                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
-                                                              </div>
-                                                              </div>
+                                                    <div class="btn-group btn-group-circle" style="width:84px">
+                                                        <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                        <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                    </div>
+                                                  </div>
                                                 </td>
                                             </tr>
+
+                                            @endforeach
+                                          @endif
 
                                         </tbody>
                                       </table>
@@ -216,29 +231,38 @@
                                             <thead>
                                               <tr class="uppercase">
                                                   <th> # </th>
+                                                  <th> Date </th>
                                                   <th> Trough(CO) </th>
                                                   <th> Dose(mg/day) </th>
                                                   <th> CO/D </th>
                                                   <th>  </th>
                                               </tr>
                                             </thead>
-                                            <tbody><tr>
+                                            <tbody>
+
+                                              @if($message_2 != NULL)
+                                                @foreach($message_2 as $item_2)
+                                              <tr {{$j++}}>
 
                                                 <td>
-                                                    <a href="javascript:;" class="primary-link">Brain</a>
+                                                    <a href="javascript:;" class="primary-link">{{$j}}</a>
                                                 </td>
-                                                <td> $345 </td>
-                                                <td> 45 </td>
-                                                <td> 124 </td>
+                                                <td> {{$item_2->set_date}} </td>
+                                                <td> {{$item_2->trough}} </td>
+                                                <td> {{$item_2->dose_1}} </td>
+                                                <td>  </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
-                                                  <div class="btn-group btn-group-circle" style="width:84px">
-                                                                  <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                                  <button type="button" class="btn btn-outline red btn-sm">Del</button>
-                                                              </div>
-                                                              </div>
+                                                    <div class="btn-group btn-group-circle" style="width:84px">
+                                                        <button type="button" class="btn btn-outline green btn-sm">Edit</button>
+                                                        <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                    </div>
+                                                  </div>
                                                 </td>
                                             </tr>
+
+                                            @endforeach
+                                          @endif
 
                                         </tbody>
                                       </table>
