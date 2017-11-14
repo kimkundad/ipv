@@ -148,7 +148,7 @@
 
 
                             <!-- BEGIN PORTLET-->
-                            <div class="portlet light bordered" style="margin-bottom: 120px;">
+                            <div class="portlet light bordered" id="item-list-product" style="margin-bottom: 120px;">
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
                                         <i class="icon-globe font-dark hide"></i>
@@ -168,7 +168,7 @@
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1">
                                           <a href="javascript:;" class="btn btn-circle red btn-outline">Comment</a>
-                                          <a href="javascript:;" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
+                                          <a href="{{url('/add_item-'.$objs->id.'-1')}}" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
                                                         </a>
                                           <div class="table-scrollable table-scrollable-borderless">
@@ -206,8 +206,8 @@
 
                                           </div>
                                         <div class="tab-pane" id="tab_1_2">
-                                          <a href="javascript:;" class="btn btn-circle red btn-outline">Comment</a>
-                                          <a href="javascript:;" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
+                                          <a href="" class="btn btn-circle red btn-outline">Comment</a>
+                                          <a href="{{url('/add_item-'.$objs->id.'-2')}}" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
                                                         </a>
 

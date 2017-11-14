@@ -76,6 +76,30 @@ class PatientController extends Controller
 
     }
 
+    //patientitem
+
+    public function patient_item(Request $request)
+    {
+      $this->validate($request, [
+         'hospital_code' => 'required',
+         'sex' => 'required',
+         'age' => 'required'
+     ]);
+    }
+
+
+    public function add_item($id = 0, $sub_id = 0){
+
+      $objs = patient::find($id);
+      date_default_timezone_set("Asia/Bangkok");
+      $data['set_date'] = date("d-m-Y");
+      $data['objs'] = $objs;
+      $data['method'] = "post";
+      $data['num_product'] = $sub_id;
+      return view('add_item', $data);
+
+    }
+
     /**
      * Display the specified resource.
      *
