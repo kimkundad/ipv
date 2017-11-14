@@ -104,6 +104,8 @@
 
                                               </div>
                                           </div>
+
+                                          <a href="{{('patient/'.$obj->id)}}">
                                           <div class="portlet-body">
 
                                               <div class="alert alert-success">
@@ -111,8 +113,9 @@
                                               <div class="alert alert-info">
                                                   <strong>Age. </strong> {{$obj->age}} </div>
 
-
                                           </div>
+                                        </a>
+
                                       </div>
                                       <!-- END PORTLET-->
 
