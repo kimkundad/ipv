@@ -66,7 +66,7 @@
                 <a href="{{url('patient')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list
 
                                                                     </a>
-                <i class="fa fa-circle"></i>
+                
             </li>
 
         </ul>
