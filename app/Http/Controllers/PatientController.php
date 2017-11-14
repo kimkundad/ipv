@@ -142,7 +142,7 @@ class PatientController extends Controller
       ->where('cat_id', $id)
       ->where('item1', 1)
       ->orderBy('id', 'desc')
-      ->paginate(15);
+      ->paginate(1);
 
 
 
@@ -153,7 +153,7 @@ class PatientController extends Controller
       ->where('cat_id', $id)
       ->where('item1', 2)
       ->orderBy('id', 'desc')
-      ->paginate(15);
+      ->paginate(1);
 
       $i = 0;
       $j = 0;
