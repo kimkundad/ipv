@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Auth;
 use App\patient;
+use App\patientitem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -81,10 +82,38 @@ class PatientController extends Controller
     public function patient_item(Request $request)
     {
       $this->validate($request, [
-         'hospital_code' => 'required',
-         'sex' => 'required',
-         'age' => 'required'
+         'set_comment' => 'required',
+         'cat_id' => 'required',
+         'set_date' => 'required',
+         'trough' => 'required',
+         'dose_1' => 'required'
      ]);
+
+       $id = $request['cat_id'];
+       if($request['comment'] == 1){
+
+         $package = patient::find($id);
+         $package->comment_1 = $request['comment'];
+         $package->save();
+
+       }else{
+
+         $package = patient::find($id);
+         $package->comment_2 = $request['comment'];
+         $package->save();
+
+       }
+
+       $obj = new patientitem();
+       $obj->cat_id = $request['cat_id'];
+       $obj->trough = $request['trough'];
+       $obj->dose_1 = $request['dose_1'];
+       $obj->set_date = $request['set_date'];
+       $obj->save();
+
+       return redirect(url('patient/'.$request['cat_id']))->with('success_item','เพิ่มข้อมูลสำเร็จสำเร็จ');
+
+
     }
 
 

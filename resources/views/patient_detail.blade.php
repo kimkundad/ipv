@@ -293,9 +293,9 @@
         });
     </script>
 
-@if ($message = Session::get('success_user'))
+@if ($message = Session::get('success_item'))
 <script type="text/javascript">
-  swal("Success!", "You edit profile Success!", "success");
+  swal("Success!", "Add new value to process now!", "success");
 </script>
 @endif
 
