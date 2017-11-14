@@ -174,7 +174,31 @@
                                     <!--BEGIN TABS-->
                                     <div class="tab-content">
                                         <div class="tab-pane active" id="tab_1_1">
-                                          <a href="javascript:;" class="btn btn-circle red btn-outline">Comment</a>
+                                          <a href="#long1" data-toggle="modal" class="btn btn-circle red btn-outline">Comment</a>
+
+                                          <!-- Long Modals -->
+
+                                          <div id="long1" class="modal fade modal-scroll" tabindex="-1" data-replace="true" style="display: none;">
+                                              <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                      <div class="modal-header">
+                                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                          <h4 class="modal-title">Comment</h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        {{$objs->comment_1}}
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                          <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- Long Modals -->
+
+
+
                                           <a href="{{url('/add_item-'.$objs->id.'-1')}}" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
                                                         </a>
@@ -222,7 +246,30 @@
 
                                           </div>
                                         <div class="tab-pane" id="tab_1_2">
-                                          <a href="" class="btn btn-circle red btn-outline">Comment</a>
+                                          <a href="#long2" data-toggle="modal" class="btn btn-circle red btn-outline">Comment</a>
+
+                                          <!-- Long Modals -->
+
+                                          <div id="long2" class="modal fade modal-scroll" tabindex="-1" data-replace="true" style="display: none;">
+                                              <div class="modal-dialog">
+                                                  <div class="modal-content">
+                                                      <div class="modal-header">
+                                                          <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                          <h4 class="modal-title">Comment</h4>
+                                                      </div>
+                                                      <div class="modal-body">
+                                                        {{$objs->comment_1}}
+                                                      </div>
+                                                      <div class="modal-footer">
+                                                          <button type="button" data-dismiss="modal" class="btn dark btn-outline">Close</button>
+                                                      </div>
+                                                  </div>
+                                              </div>
+                                          </div>
+
+                                          <!-- Long Modals -->
+
+
                                           <a href="{{url('/add_item-'.$objs->id.'-2')}}" style="margin-left:8px;" class="btn btn-circle btn-icon-only blue">
                                                             <i class="fa fa-plus" style="line-height: 17px;"></i>
                                                         </a>
