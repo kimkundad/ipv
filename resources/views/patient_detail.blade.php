@@ -2,7 +2,7 @@
 
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
-
+<link href="{{url('assets/global/css/plugins.min.css')}}" rel="stylesheet" type="text/css">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -118,6 +118,28 @@
 
 
                       <div class="col-lg-6 col-xs-12 col-sm-12">
+
+                        <div class="portlet light portlet-fit bordered">
+                            <div class="portlet-title">
+                                <div class="caption">
+                                    <i class="icon-settings font-dark"></i>
+                                    <span class="caption-subject font-dark sbold uppercase">Interactive Chart</span>
+                                </div>
+                                <div class="actions">
+                                    <div class="btn-group btn-group-devided" data-toggle="buttons">
+                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm active">
+                                            <input type="radio" name="options" class="toggle" id="option1">Actions</label>
+                                        <label class="btn btn-transparent dark btn-outline btn-circle btn-sm">
+                                            <input type="radio" name="options" class="toggle" id="option2">Settings</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <div id="chart_2" class="chart"> </div>
+                            </div>
+                        </div>
+
+
                             <!-- BEGIN PORTLET-->
                             <div class="portlet light bordered">
                                 <div class="portlet-title tabbable-line">
@@ -172,6 +194,10 @@
 @endsection
 
 @section('scripts')
+<script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
+
+<script src="{{url('assets/pages/scripts/charts-flotcharts.min.js')}}" type="text/javascript"></script>
+
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">

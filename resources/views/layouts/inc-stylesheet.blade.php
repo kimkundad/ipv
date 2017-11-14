@@ -14,7 +14,7 @@
 <link href="{{url('assets/layouts/layout4/css/custom.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/global/plugins/bootstrap-sweetalert/sweetalert.css')}}" rel="stylesheet" type="text/css">
 <!-- END THEME LAYOUT STYLES -->
-<link rel="shortcut icon" href="favicon.ico"> </head>
+<link rel="shortcut icon" href="{{url('favicon.ico')}}"> </head>
 <style>
 .breadcrumb {
     font-weight: 700;
