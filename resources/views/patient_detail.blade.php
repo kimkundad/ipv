@@ -66,7 +66,7 @@
                 <a href="{{url('patient')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list
 
                                                                     </a>
-                
+
             </li>
 
         </ul>
@@ -201,7 +201,7 @@
                                                 <td style="font-size: 12px;"> {{$item_1->set_date}} </td>
                                                 <td> {{$item_1->trough}} </td>
                                                 <td> {{$item_1->dose_1}} </td>
-                                                <td>  </td>
+                                                <td> {{$item_1->trough/$item_1->dose_1}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
@@ -251,7 +251,7 @@
                                                 <td style="font-size: 12px;"> {{$item_2->set_date}} </td>
                                                 <td> {{$item_2->trough}} </td>
                                                 <td> {{$item_2->dose_1}} </td>
-                                                <td>  </td>
+                                                <td> {{$item_2->trough/$item_2->dose_1}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
