@@ -237,7 +237,7 @@
                                                                   <span class="fileinput-new"> Select image </span>
                                                                   <span class="fileinput-exists"> Change </span>
                                                                   <input type="hidden" name="id" class="form-control" value="{{Auth::user()->id}}" />
-                                                                  <input type="file" id="upload" name="image" accept="image/*" > </span>
+                                                                  <input type="file" id="upload" name="image" accept="image/*" onClick="choosePhoto()"> </span>
                                                               <a href="javascript:;" class="btn default fileinput-exists" data-dismiss="fileinput"> Remove </a>
                                                           </div>
                                                            </form>
@@ -319,6 +319,11 @@
 
 
 <script type="text/javascript">
+
+function choosePhoto() {
+            var file = Android.choosePhoto();
+            window.alert("file = " + file);
+        }
 
 $.ajaxSetup({
 headers: {
