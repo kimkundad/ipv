@@ -107,7 +107,7 @@ a:hover { text-decoration: none}
                                                       <span class="input-group-addon">
                                                         <i class="fa fa-calendar"></i>
                                                       </span>
-                                                      <input type="text" data-plugin-datepicker name="set_date" value="{{$set_date}}" class="form-control datepicker" required="">
+                                                      <input type="text" readonly data-plugin-datepicker name="set_date" value="{{$set_date}}" class="form-control datepicker" required="">
                                                     </div>
 
                                                   </div>
