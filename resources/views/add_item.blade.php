@@ -194,6 +194,7 @@ a:hover { text-decoration: none}
 <!-- BEGIN QUICK SIDEBAR -->
 @endsection
 
+
 @section('scripts')
 <script src="{{url('assets/date/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
 <script src="{{URL::asset('assets/text/dist/summernote.js')}}"></script>
