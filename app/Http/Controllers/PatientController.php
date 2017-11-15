@@ -40,87 +40,7 @@ class PatientController extends Controller
     }
 
 
-    public function get_chart($id){
 
-      $arr2 = DB::table('patientitems')
-      ->select(
-          'patientitems.trough'
-          )
-      ->where('cat_id', $id)
-      ->where('item1', 2)
-      ->orderBy('id', 'desc')
-      ->get();
-
-      $arr2_count = DB::table('patientitems')
-      ->select(
-          'patientitems.trough'
-          )
-      ->where('cat_id', $id)
-      ->where('item1', 2)
-      ->orderBy('id', 'desc')
-      ->count();
-
-      $arr_count = DB::table('patientitems')
-      ->select(
-          'patientitems.trough'
-          )
-      ->where('cat_id', $id)
-      ->where('item1', 1)
-      ->orderBy('id', 'desc')
-      ->count();
-
-      $arr = DB::table('patientitems')
-      ->select(
-          'patientitems.trough'
-          )
-      ->where('cat_id', $id)
-      ->where('item1', 1)
-      ->orderBy('id', 'desc')
-      ->get();
-
-      $optionsRe = [];
-      $j = 0;
-      $optionsRes = [];
-      $s = 0;
-
-      if($arr2_count != 0){
-      // dd($arr2_count);
-        foreach ($arr2 as $obj2) {
-            $j++;
-            $optionsRe[] = [$j.','.$obj2->trough];
-            $obj2->data = $optionsRe;
-        }
-
-      }else{
-        //$obj2[] = array();
-        $obj2->data[] = null;
-      }
-
-
-
-
-      if($arr_count != 0){
-
-        foreach ($arr as $obj) {
-            $s++;
-            $optionsRes[] = [$s.','.$obj->trough];
-        }
-
-      }else{
-        $obj->data = null;
-      }
-
-
-      $obj->label = "TAC-BID";
-      $obj->label2 = "TAC-OD";
-      $obj->data = $optionsRes;
-
-      $Hotels[0] = array("label"=>$obj->label, "data"=>$obj->data);
-    //  $Hotels[1] = array("label"=>$obj->label2, "data"=>$obj2->data);
-
-      return response()->json($Hotels);
-
-    }
 
     /**
      * Show the form for creating a new resource.
@@ -321,6 +241,26 @@ class PatientController extends Controller
       ->orderBy('id', 'desc')
       ->paginate(15);
 
+
+      $dose_sum = DB::table('patientitems')
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->sum('dose_1');
+
+      $trough_sum = DB::table('patientitems')
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->sum('trough');
+      //$arr_count
+      $mean_value = ($arr_count/($trough_sum/$dose_sum));
+
+      //dd($arr_count);
+
+
+
+
+
+
       $i = 0;
       $j = 0;
 
@@ -331,6 +271,10 @@ class PatientController extends Controller
       //dd($obj_1->data);
       $data['c_1'] = $obj_1->data;
       $data['c_2'] = $obj_2->data;
+
+      $data['mean_value'] = $mean_value;
+      $data['arr_count'] = $arr_count;
+
       $data['message_1'] = $message_1;
       $data['message_2'] = $message_2;
       $data['objs'] = $objs;

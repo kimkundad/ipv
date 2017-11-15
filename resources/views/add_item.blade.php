@@ -216,7 +216,7 @@ $(document).ready(function() {
     ['para', ['ul', 'ol', 'paragraph']]
   ],
     disableDragAndDrop: true,
-    height: 450,
+    height: 280,
     minHeight: null,
     maxHeight: null,
     focus: true

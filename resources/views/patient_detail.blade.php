@@ -162,7 +162,7 @@
 
 
                             <!-- BEGIN PORTLET-->
-                            <div class="portlet light bordered" id="item-list-product" style="margin-bottom: 120px;">
+                            <div class="portlet light bordered" id="item-list-product" >
                                 <div class="portlet-title tabbable-line">
                                     <div class="caption">
                                         <i class="icon-globe font-dark hide"></i>
@@ -247,8 +247,49 @@
                                           @endif
 
                                         </tbody>
+
                                       </table>
                                       {{ $message_1->links() }}
+
+                                      <div class="table-scrollable table-scrollable-borderless">
+                                              <table class="table table-hover table-light">
+
+                                                  <tbody><tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">Mean</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">{{number_format($mean_value, 2, '.', '')}}</span>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">S.D.</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">67%</span>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">CV%</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">98%</span>
+                                                      </td>
+                                                  </tr>
+
+
+                                              </tbody></table>
+                                          </div>
+
+
                                     </div>
 
                                           </div>
@@ -322,6 +363,46 @@
                                         </tbody>
                                       </table>
                                       {{ $message_2->links() }}
+
+
+                                      <div class="table-scrollable table-scrollable-borderless">
+                                              <table class="table table-hover table-light">
+
+                                                  <tbody><tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">Mean</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">67%</span>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">S.D.</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">67%</span>
+                                                      </td>
+                                                  </tr>
+                                                  <tr>
+
+                                                      <td>
+                                                          <a href="javascript:;" class="primary-link">CV%</a>
+                                                      </td>
+
+                                                      <td>
+                                                          <span class="bold theme-font">98%</span>
+                                                      </td>
+                                                  </tr>
+
+
+                                              </tbody></table>
+                                          </div>
+
                                     </div>
 
                                             </div>
@@ -330,6 +411,13 @@
                                 </div>
                             </div>
                             <!-- END PORTLET-->
+
+
+
+
+
+
+
                         </div>
 
         </div>
