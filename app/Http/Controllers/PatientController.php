@@ -111,6 +111,7 @@ class PatientController extends Controller
        $obj->cat_id = $request['cat_id'];
        $obj->trough = $request['trough'];
        $obj->dose_1 = $request['dose_1'];
+       $obj->c0 = ($request['trough']/$request['dose_1']);
        $obj->set_date = $request['set_date'];
        $obj->item1 = $request['set_comment'];
        $obj->save();
