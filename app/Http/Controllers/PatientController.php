@@ -39,6 +39,89 @@ class PatientController extends Controller
       return view('add_patient',$data);
     }
 
+
+    public function get_chart($id){
+
+      $arr2 = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->orderBy('id', 'desc')
+      ->get();
+
+      $arr2_count = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->orderBy('id', 'desc')
+      ->count();
+
+      $arr_count = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->orderBy('id', 'desc')
+      ->count();
+
+      $arr = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->orderBy('id', 'desc')
+      ->get();
+
+      $optionsRe = [];
+      $j = 0;
+      $optionsRes = [];
+      $s = 0;
+
+      if($arr2_count != 0){
+      // dd($arr2_count);
+        foreach ($arr2 as $obj2) {
+            $j++;
+            $optionsRe[] = [$j.','.$obj2->trough];
+            $obj2->data = $optionsRe;
+        }
+
+      }else{
+        //$obj2[] = array();
+        $obj2->data[] = null;
+      }
+
+
+
+
+      if($arr_count != 0){
+
+        foreach ($arr as $obj) {
+            $s++;
+            $optionsRes[] = [$s.','.$obj->trough];
+        }
+
+      }else{
+        $obj->data = null;
+      }
+
+
+      $obj->label = "TAC-BID";
+      $obj->label2 = "TAC-OD";
+      $obj->data = $optionsRes;
+
+      $Hotels[0] = array("label"=>$obj->label, "data"=>$obj->data);
+    //  $Hotels[1] = array("label"=>$obj->label2, "data"=>$obj2->data);
+
+      return response()->json($Hotels);
+
+    }
+
     /**
      * Show the form for creating a new resource.
      *
@@ -138,6 +221,89 @@ class PatientController extends Controller
      */
     public function show($id)
     {
+
+
+      $arr_count = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->orderBy('id', 'desc')
+      ->count();
+
+      $arr = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->orderBy('id', 'desc')
+      ->get();
+
+
+      $optionsRes = [];
+      $s = 0;
+
+      if($arr_count != 0){
+      // dd($arr2_count);
+        foreach ($arr as $obj_1) {
+            $s++;
+            $optionsRes[] = [$s.','.$obj_1->trough];
+            $obj_1->data = $optionsRes;
+        }
+
+      }else{
+        //$obj2[] = array();
+        $obj_1->data[] = null;
+      }
+
+
+
+      $arr_count2 = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->orderBy('id', 'desc')
+      ->count();
+
+      $arr2 = DB::table('patientitems')
+      ->select(
+          'patientitems.trough'
+          )
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->orderBy('id', 'desc')
+      ->get();
+
+
+      $optionsRes2 = [];
+      $z = 0;
+
+      if($arr_count2 != 0){
+      // dd($arr2_count);
+        foreach ($arr2 as $obj_2) {
+            $z++;
+            $optionsRes2[] = [$z.','.$obj_2->trough];
+            $obj_2->data = $optionsRes2;
+        }
+
+      }else{
+        //$obj2[] = array();
+        $obj_2->data[] = null;
+      }
+
+
+
+
+
+      //dd($obj2->data);
+
+
+
+
       $message_1 = DB::table('patientitems')
       ->where('cat_id', $id)
       ->where('item1', 1)
@@ -162,7 +328,9 @@ class PatientController extends Controller
 
       $data['i'] = $i;
       $data['j'] = $j;
-
+      //dd($obj_1->data);
+      $data['c_1'] = $obj_1->data;
+      $data['c_2'] = $obj_2->data;
       $data['message_1'] = $message_1;
       $data['message_2'] = $message_2;
       $data['objs'] = $objs;

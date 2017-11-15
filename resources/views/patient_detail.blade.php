@@ -353,24 +353,45 @@
 <script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
 
 <script type="text/javascript">
-        var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
-        var data2 = [[1, 100], [2, 140], [3, 180], [4, 60], [5, 59]];
+      //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
+      // var data2 = [[1, 100], [2, 140], [3, 180], [4, 60], [5, 59]];
 
-        var dataset = [{label: "TAC-BID",data: data},{label: "TAC-OD",data: data2}];
+      //  var dataset = [{label: "TAC-BID",data: [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]]} ];
 
-        var options = {
-            series: {
-                lines: { show: true },
-                points: {
-                    radius: 3,
-                    show: true
-                }
+        var dataset2 = [{label:"TAC-BID",data: [
+          @if($c_1 != null)
+            @foreach($c_1 as $chart_1)
+              [{{$chart_1[0]}}],
+            @endforeach
+          @endif
+        ]}, {label:"TAC-OD",data: [
+          @if($c_2 != null)
+            @foreach($c_2 as $chart_2)
+              [{{$chart_2[0]}}],
+            @endforeach
+          @endif
+        ]}
+      ];
+
+
+
+
+
+      var plot = $.plot("#flot-placeholder", dataset2, {
+
+        series: {
+            lines: { show: true },
+            points: {
+                radius: 3,
+                show: true
             }
-        };
+        }
 
-        $(document).ready(function () {
-            $.plot($("#flot-placeholder"), dataset, options);
-        });
+
+      });
+
+
+
     </script>
 
 @if ($message = Session::get('success_item'))
