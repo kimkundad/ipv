@@ -255,6 +255,8 @@ class PatientController extends Controller
       }
 
 
+
+
       $c0_sum2 = DB::table('patientitems')
       ->where('cat_id', $id)
       ->where('item1', 2)
@@ -282,7 +284,7 @@ class PatientController extends Controller
       ->first();
 
     //  dd($sd);
-
+      //  dd($sd->total_sales);
 
 
 

@@ -282,7 +282,7 @@
 
                                                       <td>
                                                           <span class="bold theme-font">
-                                                            @if($mean_value1 == 0)
+                                                            @if($mean_value1 == 0 || $sd->total_sales ==0)
                                                             0.00%
                                                             @else
                                                             {{number_format($mean_value1/$sd->total_sales, 2, '.', '')}}
@@ -404,7 +404,7 @@
 
                                                       <td>
                                                           <span class="bold theme-font">
-                                                            @if($mean_value2 == 0)
+                                                            @if($mean_value2 == 0 || $sd->total_sales ==0)
                                                             0.00%
                                                             @else
                                                             {{number_format($mean_value2/$sd2->total_sales, 2, '.', '')}}
