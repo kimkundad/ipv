@@ -250,6 +250,8 @@ class PatientController extends Controller
       //$arr_count
       if($arr_count != 0){
         $mean_value1 = ($c0_sum/$arr_count);
+      }else{
+        $mean_value1 = 0;
       }
 
 
@@ -260,6 +262,8 @@ class PatientController extends Controller
       //$arr_count
       if($arr_count != 0){
         $mean_value2 = ($c0_sum2/$arr_count);
+      }else{
+        $mean_value2 = 0;
       }
 
 
