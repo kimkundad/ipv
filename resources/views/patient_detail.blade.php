@@ -232,7 +232,7 @@
                                                 <td class="small-date"> {{$item_1->set_date}} </td>
                                                 <td> {{$item_1->trough}} </td>
                                                 <td> {{$item_1->dose_1}} </td>
-                                                <td> {{number_format($item_1->trough/$item_1->dose_1, 2, '.', '')}} </td>
+                                                <td> {{number_format($item_1->c0, 2, '.', '')}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
@@ -261,7 +261,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format($mean_value, 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{number_format($mean_value1, 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -271,7 +271,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">67%</span>
+                                                          <span class="bold theme-font">{{number_format($sd->total_sales, 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -281,7 +281,15 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">98%</span>
+                                                          <span class="bold theme-font">
+                                                            @if($mean_value1 == 0)
+                                                            0.00%
+                                                            @else
+                                                            {{number_format($mean_value1/$sd->total_sales, 2, '.', '')}}
+                                                            @endif
+
+
+                                                          </span>
                                                       </td>
                                                   </tr>
 
@@ -346,7 +354,7 @@
                                                 <td class="small-date"> {{$item_2->set_date}} </td>
                                                 <td> {{$item_2->trough}} </td>
                                                 <td> {{$item_2->dose_1}} </td>
-                                                <td> {{number_format($item_2->trough/$item_2->dose_1, 2, '.', '')}} </td>
+                                                <td> {{number_format($item_2->c0, 2, '.', '')}} </td>
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
@@ -375,7 +383,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">67%</span>
+                                                          <span class="bold theme-font">{{number_format($mean_value2, 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -385,7 +393,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">67%</span>
+                                                          <span class="bold theme-font">{{number_format($sd2->total_sales, 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -395,7 +403,15 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">98%</span>
+                                                          <span class="bold theme-font">
+                                                            @if($mean_value2 == 0)
+                                                            0.00%
+                                                            @else
+                                                            {{number_format($mean_value2/$sd2->total_sales, 2, '.', '')}}
+                                                            @endif
+
+
+                                                            %</span>
                                                       </td>
                                                   </tr>
 

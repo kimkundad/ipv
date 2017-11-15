@@ -147,9 +147,9 @@ a:hover { text-decoration: none}
 
                                                       <div class="form-group">
                                                           <label class="control-label">comment</label>
-                                                          <textarea class="form-control" name="comment" id="summernote" rows="7">@if($num_product == 1){{$objs->comment_1}}@else{{$objs->comment_2}}@endif</textarea>
+                                                          <textarea class="form-control" name="comment" id="summernote" rows="4">@if($num_product == 1){{$objs->comment_1}}@else{{$objs->comment_2}}@endif</textarea>
                                                         </div>
-                                                      <br><br>
+                                                      
                                                   <div class="margiv-top-10">
                                                     <button type="submit" class="btn green">
                                                         Submit
@@ -216,7 +216,7 @@ $(document).ready(function() {
     ['para', ['ul', 'ol', 'paragraph']]
   ],
     disableDragAndDrop: true,
-    height: 280,
+    height: 200,
     minHeight: null,
     maxHeight: null,
     focus: true

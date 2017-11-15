@@ -243,21 +243,34 @@ class PatientController extends Controller
       ->paginate(15);
 
 
-      $dose_sum = DB::table('patientitems')
+      $c0_sum = DB::table('patientitems')
       ->where('cat_id', $id)
       ->where('item1', 1)
-      ->sum('dose_1');
-
-      $trough_sum = DB::table('patientitems')
-      ->where('cat_id', $id)
-      ->where('item1', 1)
-      ->sum('trough');
+      ->sum('c0');
       //$arr_count
-      $mean_value = ($arr_count/($trough_sum/$dose_sum));
+      $mean_value1 = ($c0_sum/$arr_count);
 
-      //dd($arr_count);
+      $c0_sum2 = DB::table('patientitems')
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->sum('c0');
+      //$arr_count
+      $mean_value2 = ($c0_sum2/$arr_count);
 
+      //dd($arr_count); ->select('department', DB::raw('SUM(price) as total_sales'))
+      $sd = DB::table('patientitems')
+      ->select(DB::raw('STDDEV(patientitems.c0) as total_sales'))
+      ->where('cat_id', $id)
+      ->where('item1', 1)
+      ->first();
 
+      $sd2 = DB::table('patientitems')
+      ->select(DB::raw('STDDEV(patientitems.c0) as total_sales'))
+      ->where('cat_id', $id)
+      ->where('item1', 2)
+      ->first();
+
+    //  dd($sd);
 
 
 
@@ -272,9 +285,10 @@ class PatientController extends Controller
       //dd($obj_1->data);
       $data['c_1'] = $obj_1->data;
       $data['c_2'] = $obj_2->data;
-
-      $data['mean_value'] = $mean_value;
-      $data['arr_count'] = $arr_count;
+      $data['sd'] = $sd;
+      $data['sd2'] = $sd2;
+      $data['mean_value2'] = $mean_value2;
+      $data['mean_value1'] = $mean_value1;
 
       $data['message_1'] = $message_1;
       $data['message_2'] = $message_2;
