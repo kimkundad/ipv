@@ -248,14 +248,21 @@ class PatientController extends Controller
       ->where('item1', 1)
       ->sum('c0');
       //$arr_count
-      $mean_value1 = ($c0_sum/$arr_count);
+      if($arr_count != 0){
+        $mean_value1 = ($c0_sum/$arr_count);
+      }
+
 
       $c0_sum2 = DB::table('patientitems')
       ->where('cat_id', $id)
       ->where('item1', 2)
       ->sum('c0');
       //$arr_count
-      $mean_value2 = ($c0_sum2/$arr_count);
+      if($arr_count != 0){
+        $mean_value2 = ($c0_sum2/$arr_count);
+      }
+
+
 
       //dd($arr_count); ->select('department', DB::raw('SUM(price) as total_sales'))
       $sd = DB::table('patientitems')
