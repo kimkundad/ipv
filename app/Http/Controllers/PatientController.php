@@ -107,11 +107,21 @@ class PatientController extends Controller
 
        }
 
+       if($request['trough'] == 0){
+        $trough_value = 1;
+       }
+
+       if($request['dose_1'] == 0){
+        $dose_1_value = 1;
+       }
+
+
+
        $obj = new patientitem();
        $obj->cat_id = $request['cat_id'];
        $obj->trough = $request['trough'];
        $obj->dose_1 = $request['dose_1'];
-       $obj->c0 = @($request['trough']/$request['dose_1']);
+       $obj->c0 = @($trough_value/$dose_1_value);
        $obj->set_date = $request['set_date'];
        $obj->item1 = $request['set_comment'];
        $obj->save();
