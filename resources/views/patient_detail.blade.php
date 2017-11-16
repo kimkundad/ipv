@@ -238,7 +238,7 @@
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
                                                         <a class="btn btn-outline green btn-sm" data-toggle="modal" href="#edit-{{$item_1->id}}">Edit</a>
-                                                        <a class="btn btn-outline red btn-sm" style="border-radius: 0 25px 25px 0 !important">Del</a>
+                                                        <a class="btn btn-outline red btn-sm" style="border-radius: 0 25px 25px 0 !important" data-toggle="modal" href="#del-{{$item_1->id}}">Del</a>
 
 
 
