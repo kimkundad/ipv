@@ -325,10 +325,12 @@ class PatientController extends Controller
       ->sum('c0');
       //$arr_count
       if($arr_count != 0){
-        $mean_value2 = @($c0_sum2/$arr_count);
+        $mean_value2 = @($c0_sum2/$arr_count2);
       }else{
         $mean_value2 = 0;
       }
+
+     // dd($arr_count2);
 
 
 
