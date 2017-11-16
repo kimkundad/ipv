@@ -136,6 +136,54 @@ class PatientController extends Controller
     }
 
 
+
+    public function patient_item_edit(Request $request)
+    {
+
+      $this->validate($request, [
+         'item_id' => 'required',
+         'trough' => 'required',
+         'dose_1' => 'required'
+     ]);
+
+      if($request['trough'] == 0){
+        $trough_value = 1;
+       }else{
+        $trough_value = $request['trough'];
+       }
+
+       if($request['dose_1'] == 0){
+        $dose_1_value = 1;
+       }else{
+        $dose_1_value = $request['dose_1'];
+       }
+
+     $id = $request['item_id'];
+
+     $package = patientitem::find($id);
+     $package->trough = $request['trough'];
+     $package->dose_1 = $request['dose_1'];
+     $package->c0 = ($trough_value/$dose_1_value);
+     $package->set_date = $request['set_date'];
+     $package->save();
+
+     return redirect(url('patient/'.$request['cat_id'].'#item-list-product'))->with('success_item_edit','เพิ่มข้อมูลสำเร็จสำเร็จ');
+
+    }
+
+    public function patient_item_del(Request $request)
+    {
+      $id = $request['item_id'];
+
+      $obj = patientitem::find($id);
+      $obj->delete();
+
+      return redirect(url('patient/'.$request['cat_id'].'#item-list-product'))->with('success_item_del','เพิ่มข้อมูลสำเร็จสำเร็จ');
+    }
+
+
+
+
     public function add_item($id = 0, $sub_id = 0){
 
       $objs = patient::find($id);

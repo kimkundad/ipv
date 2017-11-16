@@ -4,6 +4,7 @@
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/global/css/plugins.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="{{url('assets/date/css/bootstrap-datepicker.standalone.css')}}">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -236,8 +237,105 @@
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
-                                                        <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                        <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                        <a class="btn btn-outline green btn-sm" data-toggle="modal" href="#edit-{{$item_1->id}}">Edit</a>
+                                                        <a class="btn btn-outline red btn-sm" style="border-radius: 0 25px 25px 0 !important">Del</a>
+
+
+
+
+
+                                                        <div class="modal fade" id="del-{{$item_1->id}}" tabindex="-1" role="del-{{$item_1->id}}" aria-hidden="true" >
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                        <h4 class="modal-title">Delete item?</h4>
+                                                                    </div>
+                                                                    <div class="modal-body"> 
+
+                                                                    You want Delete item ?
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+
+                                                                      <form  method="POST" action="{{ url('patient_item_del') }}">
+                                                
+                                                                        {{ csrf_field() }}
+                                                                          <input type="hidden" name="item_id" class="form-control" value="{{$item_1->id}}" readonly/>
+                                                                          <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
+                                                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn red-haze">Delete</button>
+                                                                      </form>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal-dialog -->
+                                                        </div>
+
+
+
+                                                        <div class="modal fade" id="edit-{{$item_1->id}}" style="text-align: left;" tabindex="-1" role="edit-{{$item_1->id}}" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                        <h4 class="modal-title">Change Value</h4>
+                                                                    </div>
+                                                                    <div class="modal-body"> 
+
+
+                                                <form  method="POST" action="{{ url('patient_item_edit') }}">
+                                                
+                                                {{ csrf_field() }}
+                                                <div class="form-group">
+                                                    <label class="control-label">Date</label>
+                                               
+
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                      </span>
+                                                      <input type="text" readonly data-plugin-datepicker name="set_date" value="{{$item_1->set_date}}" class="form-control datepicker" required="">
+                                                    </div>
+
+                                                  </div>
+                                                 
+                                                    <input type="hidden" name="item_id" class="form-control" value="{{$item_1->id}}" readonly/>
+                                                    <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
+
+
+
+                                                  <div class="form-group{{ $errors->has('trough') ? ' has-error' : '' }}">
+                                                      <label class="control-label">Trough(CO)</label>
+                                                      <input type="number" step="0.01" name="trough" class="form-control" value="{{$item_1->trough}}"/>
+
+                                                          </div>
+
+                                                  <div class="form-group{{ $errors->has('dose_1') ? ' has-error' : '' }}">
+                                                      <label class="control-label">Dose(mg/day)</label>
+                                                      <input type="number" step="0.01" name="dose_1" class="form-control" value="{{$item_1->dose_1}}"/>
+
+                                                          </div>
+                                                          
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn green">Save changes</button>
+                                                                    </div>
+
+
+                                                                 </form>   
+
+
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal-dialog -->
+                                                        </div>
+
+
                                                     </div>
                                                   </div>
                                                 </td>
@@ -285,7 +383,7 @@
                                                             @if($mean_value1 == 0 || $sd->total_sales ==0)
                                                             0.00%
                                                             @else
-                                                            {{@number_format($mean_value1/$sd->total_sales, 2, '.', '')}}
+                                                            {{@number_format($sd->total_sales/$mean_value1, 2, '.', '')*100}}%
                                                             @endif
 
 
@@ -358,8 +456,130 @@
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
-                                                        <button type="button" class="btn btn-outline green btn-sm">Edit</button>
-                                                        <button type="button" class="btn btn-outline red btn-sm">Del</button>
+                                                        
+
+
+
+
+
+
+
+
+
+                                                        <a class="btn btn-outline green btn-sm" data-toggle="modal" href="#edit-{{$item_2->id}}">Edit</a>
+                                                        <a class="btn btn-outline red btn-sm" style="border-radius: 0 25px 25px 0 !important" data-toggle="modal" href="#del-{{$item_2->id}}">Del</a>
+
+
+
+
+
+
+
+
+                                                        <div class="modal fade" id="del-{{$item_2->id}}" tabindex="-1" role="del-{{$item_2->id}}" aria-hidden="true" >
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                        <h4 class="modal-title">Delete item?</h4>
+                                                                    </div>
+                                                                    <div class="modal-body"> 
+
+                                                                    You want Delete item ?
+
+                                                                    </div>
+                                                                    <div class="modal-footer">
+
+                                                                      <form  method="POST" action="{{ url('patient_item_del') }}">
+                                                
+                                                                        {{ csrf_field() }}
+                                                                          <input type="hidden" name="item_id" class="form-control" value="{{$item_2->id}}" readonly/>
+                                                                          <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
+                                                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn red-haze">Delete</button>
+                                                                      </form>
+
+                                                                    </div>
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal-dialog -->
+                                                        </div>
+
+
+
+
+
+
+
+                                                        <div class="modal fade" id="edit-{{$item_2->id}}" style="text-align: left;" tabindex="-1" role="edit-{{$item_2->id}}" aria-hidden="true">
+                                                            <div class="modal-dialog">
+                                                                <div class="modal-content">
+                                                                    <div class="modal-header">
+                                                                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
+                                                                        <h4 class="modal-title">Change Value</h4>
+                                                                    </div>
+                                                                    <div class="modal-body"> 
+
+
+                                                <form  method="POST" action="{{ url('patient_item_edit') }}">
+                                                
+                                                {{ csrf_field() }}
+                                                <div class="form-group">
+                                                    <label class="control-label">Date</label>
+                                               
+
+                                                  <div class="input-group">
+                                                      <span class="input-group-addon">
+                                                        <i class="fa fa-calendar"></i>
+                                                      </span>
+                                                      <input type="text" readonly data-plugin-datepicker name="set_date" value="{{$item_2->set_date}}" class="form-control datepicker" required="">
+                                                    </div>
+
+                                                  </div>
+                                                 
+                                                    <input type="hidden" name="item_id" class="form-control" value="{{$item_2->id}}" readonly/>
+                                                    <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
+
+
+
+                                                  <div class="form-group{{ $errors->has('trough') ? ' has-error' : '' }}">
+                                                      <label class="control-label">Trough(CO)</label>
+                                                      <input type="number" step="0.01" name="trough" class="form-control" value="{{$item_2->trough}}"/>
+
+                                                          </div>
+
+                                                  <div class="form-group{{ $errors->has('dose_1') ? ' has-error' : '' }}">
+                                                      <label class="control-label">Dose(mg/day)</label>
+                                                      <input type="number" step="0.01" name="dose_1" class="form-control" value="{{$item_2->dose_1}}"/>
+
+                                                          </div>
+                                                          
+                                                                    </div>
+                                                                    <div class="modal-footer">
+                                                                        <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
+                                                                        <button type="submit" class="btn green">Save changes</button>
+                                                                    </div>
+
+                                                                    </form>
+                                                                    
+
+
+                                                                </div>
+                                                                <!-- /.modal-content -->
+                                                            </div>
+                                                            <!-- /.modal-dialog -->
+                                                        </div>
+
+
+
+
+
+
+
+
+
+
                                                     </div>
                                                   </div>
                                                 </td>
@@ -404,14 +624,15 @@
 
                                                       <td>
                                                           <span class="bold theme-font">
+
                                                             @if($mean_value2 == 0 || $sd->total_sales ==0)
                                                             0.00%
                                                             @else
-                                                            {{@number_format($mean_value2/$sd2->total_sales, 2, '.', '')}}
+                                                            {{@number_format($sd2->total_sales/$mean_value2, 2, '.', '')}}%
                                                             @endif
 
 
-                                                            %</span>
+                                                            </span>
                                                       </td>
                                                   </tr>
 
@@ -455,6 +676,7 @@
 
 @section('scripts')
 <script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
+<script src="{{url('assets/date/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
 
 <script type="text/javascript">
       //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
@@ -498,11 +720,31 @@
 
     </script>
 
+    <script>
+$.fn.datepicker.defaults.format = "dd-mm-yyyy";
+$('.datepicker').datepicker({
+});
+</script>
+
 @if ($message = Session::get('success_item'))
 <script type="text/javascript">
   swal("Success!", "Add new value to process now!", "success");
 </script>
 @endif
+
+
+@if ($message = Session::get('success_item_edit'))
+<script type="text/javascript">
+  swal("Success!", "Edit value to process Success!", "success");
+</script>
+@endif
+
+@if ($message = Session::get('success_item_del'))
+<script type="text/javascript">
+  swal("Success Delete!", "Delete your value Success!", "success");
+</script>
+@endif
+
 
 
 @stop('scripts')
