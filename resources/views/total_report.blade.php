@@ -152,6 +152,42 @@ a:hover { text-decoration: none}
 
 
 
+
+
+
+          <div class="col-md-9">
+            <div class="portlet light bordered">
+
+
+              <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold uppercase font-dark">all Patient</span>
+
+                                </div>
+                                <div class="actions">
+
+                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+
+                <div class="portlet-body">
+
+                  <div class="portlet light portlet-fit bordered">
+
+                      <div class="portlet-body">
+                          <div id="flot-placeholder" class="chart"> </div>
+                      </div>
+                  </div>
+
+
+                  </div>
+
+          </div>
+          </div>
+
+
+
+
           <div class="col-md-3">
 
             <div class="portlet light bordered">
@@ -174,43 +210,6 @@ a:hover { text-decoration: none}
           </div>
 
 
-          </div>
-
-
-          <div class="col-md-9">
-            <div class="portlet light bordered">
-
-
-              <div class="portlet-title">
-                                <div class="caption">
-                                    <span class="caption-subject bold uppercase font-dark">all Patient</span>
-
-                                </div>
-                                <div class="actions">
-
-                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
-                                </div>
-                            </div>
-
-                <div class="portlet-body">
-
-                  <div class="portlet light portlet-fit bordered">
-                      <div class="portlet-title">
-                          <div class="caption">
-                              <i class="icon-settings font-dark"></i>
-                              <span class="caption-subject font-dark sbold uppercase">Interactive Chart</span>
-                          </div>
-
-                      </div>
-                      <div class="portlet-body">
-                          <div id="flot-placeholder" class="chart"> </div>
-                      </div>
-                  </div>
-
-
-                  </div>
-
-          </div>
           </div>
 
 
