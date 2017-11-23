@@ -55,14 +55,14 @@
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="min-height: 79px;">
         <!-- BEGIN PAGE HEAD-->
-    
+
         <!-- END PAGE HEAD-->
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
 
-                <a href="{{url('welcome')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list</a>
+                <a href="{{url('patient')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list</a>
 
 
             </li>
