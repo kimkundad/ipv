@@ -24,10 +24,16 @@
     border-radius: 4px;
 }
 .portlet.light {
-    padding: 15px 20px 1px;
+    padding: 15px 20px 10px;
     background-color: #fff;
 }
 a:hover { text-decoration: none}
+.alert, .thumbnail {
+    margin-bottom: 0px;
+}
+.portlet.light .portlet-body {
+    padding-top: 0px;
+}
 </style>
 @stop('stylesheet')
 
@@ -109,10 +115,10 @@ a:hover { text-decoration: none}
                                           <a href="{{('patient/'.$obj->id)}}">
                                           <div class="portlet-body">
 
-                                              <div class="alert alert-success">
-                                                  <strong>Hospital No.</strong> {{$obj->hospital_code}} </div>
-                                              <div class="alert alert-info">
-                                                  <strong>Age. </strong> {{$obj->age}} </div>
+                                              <div class="alert ">
+                                                  <strong>Hospital No.</strong> {{$obj->hospital_code}}<br>
+                                                <strong>Age. </strong> {{$obj->age}}</div>
+
 
                                           </div>
                                         </a>
