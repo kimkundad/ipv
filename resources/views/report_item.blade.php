@@ -94,20 +94,10 @@ a:hover { text-decoration: none}
           <div class="col-md-12">
               <div class="portlet light bordered">
 
-                <a href="{{url('add_patient')}}" class="icon-btn">
-                    <i class="fa fa-user-plus"></i>
-                      <div> Add Patient</div>
-                </a>
-                <a href="{{url('report_item')}}" class="icon-btn">
-                    <i class="fa fa-bar-chart-o"></i>
-                      <div> Reports </div>
-                </a>
 
-
-                <br><br>
                 <div class="portlet-title">
                                   <div class="caption">
-                                      <span class="caption-subject bold uppercase font-dark">Patient list</span>
+                                      <span class="caption-subject bold uppercase font-dark">Report all Patient</span>
                                       <span class="caption-helper">distance stats...</span>
                                   </div>
                                   <div class="actions">
@@ -119,45 +109,35 @@ a:hover { text-decoration: none}
                   <div class="portlet-body">
 
 
+                    <form  method="POST" action="{{ url('/') }}">
+                        {{ csrf_field() }}
 
+                          <div class="form-group">
+                              <label class="control-label">List Patient case</label>
+                              <select class="form-control" name="select" aria-required="true" aria-invalid="false" aria-describedby="select-error">
+                                                          <option value="">Select...</option>
+                                                          <option value="Category 1">Category 1</option>
+                                                          <option value="Category 2">Category 2</option>
+                                                          <option value="Category 3">Category 5</option>
+                                                          <option value="Category 4">Category 4</option>
+                                                      </select>
 
-                    <div class="tab-pane active" id="portlet_comments_1">
+                                  </div>
 
-                      @if(isset($objs))
-                              @foreach($objs as $obj)
-                                            <!-- BEGIN: Comments -->
-                                            <div class="mt-comments">
-                                              <a href="{{('patient/'.$obj->id)}}">
-                                                <div class="mt-comment">
-                                                    <div class="mt-comment-img">
+                          <div class="form-group">
+                              <label class="control-label">To case</label>
+                              <select class="form-control" name="select" aria-required="true" aria-invalid="false" aria-describedby="select-error">
+                                                        <option value="">Select...</option>
+                                                        <option value="Category 1">Category 1</option>
+                                                        <option value="Category 2">Category 2</option>
+                                                        <option value="Category 3">Category 5</option>
+                                                        <option value="Category 4">Category 4</option>
+                                                    </select>
 
-                                                      @if($obj->sex == 2)
-                                                      <img src="{{url('assets/avatar/image/1483556517.png')}}" style="height:45px;">
-                                                      @else
-                                                      <img src="{{url('assets/avatar/image/1483537975.png')}}" style="height:45px;">
-                                                      @endif
+                                  </div>
 
+                      </form>
 
-
-                                                    </div>
-
-                                                    <div class="mt-comment-body">
-                                                        <div class="mt-comment-info">
-                                                            <span class="mt-comment-author">{{$obj->patient_code}}</span>
-                                                            <span class="mt-comment-date">{{date('d-m-Y', strtotime($obj->created_at))}}</span>
-                                                        </div>
-                                                        <div class="mt-comment-text"> <strong>H No.</strong> {{$obj->hospital_code}}, <strong>Age. </strong> {{$obj->age}}</div>
-
-                                                    </div>
-                                                </div>
-                                              </a>
-                                            </div>
-                                            <!-- END: Comments -->
-
-                                            @endforeach
-                                                    @endif
-
-                                        </div>
 
                   </div>
 

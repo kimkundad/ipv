@@ -40,6 +40,13 @@ class PatientController extends Controller
     }
 
 
+    public function report_item(){
+
+      return view('report_item');
+
+    }
+
+
 
 
     /**
