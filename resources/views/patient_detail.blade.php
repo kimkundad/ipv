@@ -83,8 +83,8 @@ function sd($array) {
 }
 
 function standard_deviation($sample){
-  if($sample != 0 && $sample != null){
-
+  if($sample != 0 || $sample != null){
+    //dd($sample);
     if(is_array($sample)){
       $mean = array_sum($sample) / count($sample);
       foreach($sample as $key => $num) $devs[$key] = pow($num - $mean, 2);
@@ -95,6 +95,7 @@ function standard_deviation($sample){
     return 0;
   }
 }
+
 
  ?>
 
@@ -383,7 +384,7 @@ function standard_deviation($sample){
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format(standard_deviation($sd), 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{@number_format(standard_deviation($sd), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -394,7 +395,7 @@ function standard_deviation($sample){
 
                                                       <td>
                                                           <span class="bold theme-font">
-                                                            @if($mean_value1 == 0 || sd($sd) == 0)
+                                                            @if($mean_value1 == 0 || @standard_deviation($sd) == 0)
                                                             0.00%
                                                             @else
                                                             {{@number_format(standard_deviation($sd)/$mean_value1, 2, '.', '')*100}}%
@@ -627,7 +628,7 @@ function standard_deviation($sample){
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format(standard_deviation($sd2), 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{@number_format(standard_deviation($sd2), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -639,7 +640,7 @@ function standard_deviation($sample){
                                                       <td>
                                                           <span class="bold theme-font">
 
-                                                            @if($mean_value2 == 0 || sd($sd2) ==0)
+                                                            @if($mean_value2 == 0 || @standard_deviation($sd2) ==0)
                                                             0.00%
                                                             @else
                                                             {{@number_format(standard_deviation($sd2)/$mean_value2, 2, '.', '')*100}}%
