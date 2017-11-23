@@ -104,7 +104,7 @@ a:hover { text-decoration: none}
                 </a>
 
 
-
+                <br><br>
                 <div class="portlet-title">
                                   <div class="caption">
                                       <span class="caption-subject bold uppercase font-dark">Patient list</span>
