@@ -74,7 +74,7 @@ a:hover { text-decoration: none}
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
-                <a href="{{url('welcome')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Home</a>
+                <a href="#" onclick="history.go(-1)" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i>Go Back</a>
 
             </li>
 
