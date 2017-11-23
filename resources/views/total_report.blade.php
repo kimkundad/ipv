@@ -155,7 +155,7 @@ a:hover { text-decoration: none}
 
 
 
-          <div class="col-md-9">
+          <div class="col-md-8">
             <div class="portlet light bordered">
 
 
@@ -188,23 +188,41 @@ a:hover { text-decoration: none}
 
 
 
-          <div class="col-md-3">
+          <div class="col-md-4">
 
             <div class="portlet light bordered">
 
 
-              <div class="portlet-title">
-                                <div class="caption">
-                                    <span class="caption-subject bold uppercase font-dark">all Patient</span>
-
-                                </div>
-                                <div class="actions">
-
-                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
-                                </div>
-                            </div>
 
                 <div class="portlet-body">
+
+                  <div class="table-scrollable table-scrollable-borderless">
+                                        <table class="table table-hover table-light">
+                                            <thead>
+                                                <tr class="uppercase">
+                                                    <th > # </th>
+                                                    <th> TAC-BID </th>
+                                                    <th> TAC-OD </th>
+
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                              @if(isset($objs_sum))
+                                                      @foreach($objs_sum as $obj)
+                                              <tr>
+
+                                                <td> {{$obj['label']}} </td>
+                                                <td> {{$obj['data1']}} %</td>
+                                                <td> {{$obj['data2']}} %</td>
+
+                                            </tr>
+
+                                            @endforeach
+                                                    @endif
+
+                                        </tbody></table>
+                                    </div>
+
                   </div>
 
           </div>

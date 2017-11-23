@@ -102,7 +102,7 @@ class PatientController extends Controller
       $dataSet1['data'] = array(array(1,1),array(2,2));
       $dataSet2['label'] = 'Customer 2';
       $dataSet2['data'] = array(array(3,3),array(4,5)); */
-      $this->sd_square2();
+    //  $this->sd_square2();
 
       $sid = $request['sid'];
       $eid = $request['eid'];
@@ -257,6 +257,141 @@ return json_encode($flots);
 
 
 
+
+
+            $sid = $request['start_list'];
+            $eid = $request['end_list'];
+
+            $bee_main = DB::table('patients')
+            ->select(
+                'patients.id',
+                'patients.patient_code'
+                )
+            ->where('id','>=',$sid)
+            ->where('id','<=',$eid)
+            ->where('user_id', Auth::user()->id)
+            ->get();
+
+            $j = 0;
+            $someArray = [];
+            $save = [];
+            foreach ($bee_main as $bee_mains) {
+
+
+
+
+        ///////////////////////////////////////////////////////////////////////
+            $arr_count = DB::table('patientitems')
+            ->select(
+                'patientitems.trough'
+                )
+            ->where('cat_id', $bee_mains->id)
+            ->where('item1', 1)
+            ->orderBy('id', 'desc')
+            ->count();
+
+              $arr_count2 = DB::table('patientitems')
+              ->select(
+                  'patientitems.trough'
+                  )
+              ->where('cat_id', $bee_mains->id)
+              ->where('item1', 2)
+              ->orderBy('id', 'desc')
+              ->count();
+
+
+              $c0_sum = DB::table('patientitems')
+              ->where('cat_id', $bee_mains->id)
+              ->where('item1', 1)
+              ->sum('c0');
+              //$arr_count
+              if($arr_count != 0){
+                $mean_value1 = @($c0_sum/$arr_count);
+              }else{
+                $mean_value1 = 0;
+              }
+
+              $c0_sum2 = DB::table('patientitems')
+              ->where('cat_id', $bee_mains->id)
+              ->where('item1', 2)
+              ->sum('c0');
+              //$arr_count
+              if($arr_count != 0){
+                $mean_value2 = @($c0_sum2/$arr_count2);
+              }else{
+                $mean_value2 = 0;
+              }
+
+              $sd = [];
+              $sd2 = [];
+              $sd_11 = DB::table('patientitems')
+                ->select('patientitems.c0')
+                ->where('cat_id', $bee_mains->id)
+                ->where('item1', 1)
+                ->get();
+
+                foreach ($sd_11 as $obj_sd) {
+                    $sd[] = $obj_sd->c0;
+                }
+
+              $sd_22 = DB::table('patientitems')
+              ->select('patientitems.c0')
+              ->where('cat_id', $bee_mains->id)
+              ->where('item1', 2)
+              ->get();
+
+              foreach ($sd_22 as $obj_sd) {
+                  $sd2[] = $obj_sd->c0;
+              }
+
+              //dd($sd_11);
+              /////////////////////////////////////////////////////////////////////// number_format(sd($sd)/$mean_value1, 2, '.', '')*100 $this->sd()
+
+
+        //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
+
+                $arr = DB::table('patientitems')
+                ->select(
+                    'patientitems.*'
+                    )
+                ->where('cat_id', $bee_mains->id)
+                ->where('item1', 1)
+                ->orderBy('id', 'desc')
+                ->get();
+
+                $bee_mains->label = $bee_mains->patient_code;
+
+
+
+
+
+
+                  $j++;
+                  //$save[$j] = @number_format($this->sd($sd)/$mean_value1, 2, '.', '')*100;
+                  $save[$j] = $mean_value1;
+
+
+
+                array_push($someArray, [
+                      "label" => $bee_mains->label,
+                      "data1" =>  @number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100,
+                      "data2" =>  @number_format($this->standard_deviation($sd2)/$mean_value2, 2, '.', '')*100
+                  ]);
+
+
+                  //@number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100
+
+
+                $flots = $someArray;
+
+
+
+
+          }
+
+
+        //  dd($flots);
+      $data['objs_sum'] = $flots;
       $data['objs'] = $objs;
       $data['sid'] = $request['start_list'];
       $data['eid'] = $request['end_list'];
