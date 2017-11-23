@@ -3,6 +3,7 @@
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
 <link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
+<link href="{{url('assets/morris/morris.css')}}" rel="stylesheet" type="text/css">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -188,6 +189,98 @@ a:hover { text-decoration: none}
 
 
 
+
+
+
+          <div class="col-md-8">
+            <div class="portlet light bordered">
+
+
+
+
+                <div class="portlet-body">
+
+                  <div class="portlet light portlet-fit bordered">
+
+                      <div class="portlet-body">
+                        <div class="chart chart-md" id="morrisBar"></div>
+                        <script type="text/javascript">
+
+                          var morrisBarData =
+                          [
+                            @if(isset($chart))
+                              @foreach($chart as $chart_1)
+
+                              {
+                                y: '{{ $chart_1['y'] }}',
+                                a: {{ $chart_1['a'] }},
+                                b: {{ $chart_1['b'] }},
+                              },
+
+                              @endforeach
+                            @endif
+                      /*    {
+                            y: '2004',
+                            a: 10,
+                            b: 30
+                          }, {
+                            y: '2005',
+                            a: 100,
+                            b: 25
+                          }, {
+                            y: '2006',
+                            a: 60,
+                            b: 25
+                          }, {
+                            y: '2007',
+                            a: 75,
+                            b: 35
+                          }, {
+                            y: '2008',
+                            a: 90,
+                            b: 20
+                          }, {
+                            y: '2009',
+                            a: 75,
+                            b: 15
+                          }, {
+                            y: '2010',
+                            a: 50,
+                            b: 10
+                          }, {
+                            y: '2011',
+                            a: 75,
+                            b: 25
+                          }, {
+                            y: '2012',
+                            a: 30,
+                            b: 10
+                          }, {
+                            y: '2017',
+                            a: 75,
+                            b: 5
+                          }, {
+                            y: '2017',
+                            a: 60,
+                            b: 8
+                          } */
+                        ];
+
+                          // See: js/examples/examples.charts.js for more settings.
+
+                        </script>
+                      </div>
+                  </div>
+
+
+                  </div>
+
+          </div>
+          </div>
+
+
+
+
           <div class="col-md-4">
 
             <div class="portlet light bordered">
@@ -259,7 +352,8 @@ a:hover { text-decoration: none}
 
 <script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
 <script src="{{url('assets/date/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
-
+  <script src="{{url('assets/raphael/raphael.js')}}"></script>
+  <script src="{{url('assets/morris/morris.js')}}"></script>
 <script type="text/javascript">
       //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
       // var data2 = [{data:[[1,5.5],[2,5.3],[3,13.7],[4,4.2],[5,6.1]]}];
@@ -298,9 +392,24 @@ var dataset2 = [{label: "TAC-BID",data: [[1, 130], [2, 40], [3, 80], [4, 160], [
 
 });
 
-
+if( $('#morrisBar').get(0) ) {
+		Morris.Bar({
+			resize: true,
+			element: 'morrisBar',
+			data: morrisBarData,
+			xkey: 'y',
+			ykeys: ['a', 'b'],
+			labels: ['Series A', 'Series B'],
+			hideHover: true,
+			barColors: ['#0088cc', '#2baab1']
+		});
+	}
 
     </script>
+
+
+
+
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">

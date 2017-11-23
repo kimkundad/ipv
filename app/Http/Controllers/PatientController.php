@@ -274,6 +274,7 @@ return json_encode($flots);
 
             $j = 0;
             $someArray = [];
+            $morrisBarData = [];
             $save = [];
             foreach ($bee_main as $bee_mains) {
 
@@ -379,10 +380,19 @@ return json_encode($flots);
                   ]);
 
 
+
+                  array_push($morrisBarData, [
+                        "y" => $bee_mains->label,
+                        "a" =>  @number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100,
+                        "b" =>  @number_format($this->standard_deviation($sd2)/$mean_value2, 2, '.', '')*100
+                    ]);
+
+
                   //@number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100
 
 
                 $flots = $someArray;
+                $chart = $morrisBarData;
 
 
 
@@ -392,6 +402,7 @@ return json_encode($flots);
 
         //  dd($flots);
       $data['objs_sum'] = $flots;
+      $data['chart'] = $chart;
       $data['objs'] = $objs;
       $data['sid'] = $request['start_list'];
       $data['eid'] = $request['end_list'];
