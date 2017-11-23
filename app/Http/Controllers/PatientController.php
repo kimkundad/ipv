@@ -114,6 +114,7 @@ class PatientController extends Controller
           )
       ->where('id','>=',$sid)
       ->where('id','<=',$eid)
+      ->where('user_id', Auth::user()->id)
       ->get();
 
       $j = 0;
