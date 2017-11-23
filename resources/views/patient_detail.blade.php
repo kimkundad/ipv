@@ -383,7 +383,7 @@ function standard_deviation($sample){
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format(sd($sd), 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{number_format(standard_deviation($sd), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -627,7 +627,7 @@ function standard_deviation($sample){
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format(sd($sd2), 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{number_format(standard_deviation($sd2), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
