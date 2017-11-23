@@ -93,6 +93,18 @@ a:hover { text-decoration: none}
 
           <div class="col-md-12">
               <div class="portlet light bordered">
+
+                <a href="{{url('add_patient')}}" class="icon-btn">
+                    <i class="fa fa-user-plus"></i>
+                      <div> Add Patient</div>
+                </a>
+                <a href="{{url('/')}}" class="icon-btn">
+                    <i class="fa fa-bar-chart-o"></i>
+                      <div> Reports </div>
+                </a>
+
+
+
                 <div class="portlet-title">
                                   <div class="caption">
                                       <span class="caption-subject bold uppercase font-dark">Patient list</span>
@@ -105,6 +117,8 @@ a:hover { text-decoration: none}
                               </div>
 
                   <div class="portlet-body">
+
+
 
 
                     <div class="tab-pane active" id="portlet_comments_1">
