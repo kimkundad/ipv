@@ -399,7 +399,7 @@ if( $('#morrisBar').get(0) ) {
 			data: morrisBarData,
 			xkey: 'y',
 			ykeys: ['a', 'b'],
-			labels: ['Series A', 'Series B'],
+			labels: ['TAC-BID', 'TAC-OD'],
 			hideHover: true,
 			barColors: ['#0088cc', '#2baab1']
 		});
