@@ -129,7 +129,7 @@ a:hover { text-decoration: none}
                                                             <span class="mt-comment-author">{{$obj->patient_code}}</span>
                                                             <span class="mt-comment-date">{{date('d-m-Y', strtotime($obj->created_at))}}</span>
                                                         </div>
-                                                        <div class="mt-comment-text"> <strong>Hospital No.</strong> {{$obj->hospital_code}}, <strong>Age. </strong> {{$obj->age}}</div>
+                                                        <div class="mt-comment-text"> <strong>H No.</strong> {{$obj->hospital_code}}, <strong>Age. </strong> {{$obj->age}}</div>
 
                                                     </div>
                                                 </div>
