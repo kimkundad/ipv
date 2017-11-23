@@ -18,15 +18,7 @@
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="min-height: 79px;">
         <!-- BEGIN PAGE HEAD-->
-        <div class="page-head">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
 
-            </div>
-            <!-- END PAGE TITLE -->
-            <!-- BEGIN PAGE TOOLBAR -->
-
-        </div>
         <!-- END PAGE HEAD-->
         <!-- BEGIN PAGE BREADCRUMB -->
 
@@ -36,7 +28,6 @@
 
 
 
-        <br>
         <div class="row margin-bottom-20">
 
           <div class="portlet light bordered">
