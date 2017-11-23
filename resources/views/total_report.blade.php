@@ -74,7 +74,7 @@ a:hover { text-decoration: none}
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
-                <a href="#" onclick="history.go(-1)" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i>Go Back</a>
+                <a href="{{url('patient')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Patient</a>
 
             </li>
 
