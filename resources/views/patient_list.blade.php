@@ -115,7 +115,7 @@ a:hover { text-decoration: none}
                                           <a href="{{('patient/'.$obj->id)}}">
                                           <div class="portlet-body">
 
-                                              <div class="alert ">
+                                              <div class="alert alert-info">
                                                   <strong>Hospital No.</strong> {{$obj->hospital_code}}<br>
                                                 <strong>Age. </strong> {{$obj->age}}</div>
 
