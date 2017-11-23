@@ -44,6 +44,9 @@ a:hover { text-decoration: none}
 
     font-size: 13px;
 }
+.breadcrumb {
+    padding: 0 0 1px;
+}
 </style>
 @stop('stylesheet')
 
@@ -71,7 +74,7 @@ a:hover { text-decoration: none}
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
-                <a href="{{url('welcome')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Home</a>
+                <a href="{{url('welcome')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Home</a>
 
             </li>
 
