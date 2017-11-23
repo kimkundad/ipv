@@ -83,10 +83,16 @@ function sd($array) {
 }
 
 function standard_deviation($sample){
-  if(is_array($sample)){
-    $mean = array_sum($sample) / count($sample);
-    foreach($sample as $key => $num) $devs[$key] = pow($num - $mean, 2);
-    return sqrt(array_sum($devs) / (count($devs) - 1));
+  if($sample != 0 && $sample != null){
+
+    if(is_array($sample)){
+      $mean = array_sum($sample) / count($sample);
+      foreach($sample as $key => $num) $devs[$key] = pow($num - $mean, 2);
+      return sqrt(array_sum($devs) / (count($devs) - 1));
+    }
+
+  }else{
+    return 0;
   }
 }
 
@@ -636,7 +642,7 @@ function standard_deviation($sample){
                                                             @if($mean_value2 == 0 || sd($sd2) ==0)
                                                             0.00%
                                                             @else
-                                                            {{@number_format(sd($sd2)/$mean_value2, 2, '.', '')*100}}%
+                                                            {{@number_format(standard_deviation($sd2)/$mean_value2, 2, '.', '')*100}}%
                                                             @endif
 
 
