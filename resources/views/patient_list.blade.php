@@ -34,6 +34,9 @@ a:hover { text-decoration: none}
 .portlet.light .portlet-body {
     padding-top: 0px;
 }
+.portlet-body{
+  color:#999;
+}
 </style>
 @stop('stylesheet')
 
@@ -115,7 +118,7 @@ a:hover { text-decoration: none}
                                           <a href="{{('patient/'.$obj->id)}}">
                                           <div class="portlet-body">
 
-                                              <div class="alert alert-info">
+                                              <div class="alert alert-info" style="color:#666">
                                                   <strong>Hospital No.</strong> {{$obj->hospital_code}}<br>
                                                 <strong>Age. </strong> {{$obj->age}}</div>
 
