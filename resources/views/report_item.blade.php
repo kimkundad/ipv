@@ -98,7 +98,7 @@ a:hover { text-decoration: none}
                 <div class="portlet-title">
                                   <div class="caption">
                                       <span class="caption-subject bold uppercase font-dark">Report all Patient</span>
-                                      <span class="caption-helper">distance stats...</span>
+
                                   </div>
                                   <div class="actions">
 
@@ -137,8 +137,8 @@ a:hover { text-decoration: none}
                                   </div>
 
                       </form>
-
-
+                      <br>
+                      <br>
                   </div>
 
 
