@@ -2,7 +2,7 @@
 
 @section('stylesheet')
 <link href="{{url('assets/global/css/components.min.css')}}" rel="stylesheet" type="text/css">
-
+<link href="{{url('assets/global/plugins/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet" type="text/css">
 <style>
 .portlet.light {
     border-radius: 4px!important;
@@ -15,8 +15,8 @@
 .croppie-container {
     padding: 30px 0px 30px 0px;
 }
-.portlet.light.bordered>.portlet-title {
-    border: none;
+.mt-comment{
+  border-bottom: 1px solid #eef1f5;
 }
 .alert {
     padding: 10px;
@@ -37,6 +37,9 @@ a:hover { text-decoration: none}
 .portlet-body{
   color:#999;
 }
+.portlet>.portlet-title>.actions .btn-icon-only.btn-default.fullscreen:before {
+    content: "\f065";
+}
 </style>
 @stop('stylesheet')
 
@@ -50,11 +53,11 @@ a:hover { text-decoration: none}
         <!-- BEGIN PAGE HEAD-->
         <div class="page-head">
             <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
+        <!--    <div class="page-title">
                             <h1><i class="icon-book-open font-green-haze theme-font"></i> Patient list
 
                             </h1>
-                        </div>
+                        </div> -->
             <!-- END PAGE TITLE -->
             <!-- BEGIN PAGE TOOLBAR -->
 
@@ -65,7 +68,7 @@ a:hover { text-decoration: none}
             <li>
 
                 <a href="{{url('welcome')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Home</a>
-                <i class="fa fa-circle"></i>
+
             </li>
 
         </ul>
@@ -81,63 +84,68 @@ a:hover { text-decoration: none}
         <div class="row">
 
 
-              @if(isset($objs))
-                      @foreach($objs as $obj)
-
-
-                      <div class="col-md-6">
-                                      <!-- BEGIN PORTLET-->
-                                      <div class="portlet light bordered">
-                                          <div class="portlet-title" style="margin-bottom: 0px;">
-                                              <div class="caption">
-                                                  <a href="{{('patient/'.$obj->id)}}"><i class="icon-share font-dark"></i>
-                                                  <span class="caption-subject font-dark bold uppercase">{{$obj->patient_code}}</span></a>
-                                              </div>
-                                              <div class="actions">
-
-                                                @if($obj->sex == 1)
-                                                <a class="btn btn-circle btn-icon-only btn-danger" href="javascript:;">
-                                                    <i class="icon-symbol-male"></i>
-                                                </a>
-                                                @else
-                                                <a class="btn btn-circle btn-icon-only btn-success" href="javascript:;">
-                                                    <i class="icon-symbol-female"></i>
-                                                </a>
-                                                @endif
-
-
-
-                                                  <a class="btn btn-circle btn-icon-only btn-default" href="javascript:;">
-                                                      <i class="icon-wrench"></i>
-                                                  </a>
-
-
-                                              </div>
-                                          </div>
-
-                                          <a href="{{('patient/'.$obj->id)}}">
-                                          <div class="portlet-body">
-
-                                              <div class="alert alert-info" style="color:#666">
-                                                  <strong>Hospital No.</strong> {{$obj->hospital_code}}<br>
-                                                <strong>Age. </strong> {{$obj->age}}</div>
-
-
-                                          </div>
-                                        </a>
-
-                                      </div>
-                                      <!-- END PORTLET-->
-
-
-
+          <div class="col-md-12">
+              <div class="portlet light bordered">
+                <div class="portlet-title">
+                                  <div class="caption">
+                                      <span class="caption-subject bold uppercase font-dark">Patient list</span>
+                                      <span class="caption-helper">distance stats...</span>
                                   </div>
+                                  <div class="actions">
+
+                                      <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
+                                  </div>
+                              </div>
+
+                  <div class="portlet-body">
+
+
+                    <div class="tab-pane active" id="portlet_comments_1">
+
+                      @if(isset($objs))
+                              @foreach($objs as $obj)
+                                            <!-- BEGIN: Comments -->
+                                            <div class="mt-comments">
+                                              <a href="{{('patient/'.$obj->id)}}">
+                                                <div class="mt-comment">
+                                                    <div class="mt-comment-img">
+
+                                                      @if($obj->sex == 2)
+                                                      <img src="{{url('assets/avatar/image/1483556517.png')}}" style="height:45px;">
+                                                      @else
+                                                      <img src="{{url('assets/avatar/image/1483537975.png')}}" style="height:45px;">
+                                                      @endif
 
 
 
-              @endforeach
-                      @endif
+                                                    </div>
 
+                                                    <div class="mt-comment-body">
+                                                        <div class="mt-comment-info">
+                                                            <span class="mt-comment-author">{{$obj->patient_code}}</span>
+                                                            <span class="mt-comment-date">{{$obj->created_at}}</span>
+                                                        </div>
+                                                        <div class="mt-comment-text"> <strong>Hospital No.</strong> {{$obj->hospital_code}}, <strong>Age. </strong> {{$obj->age}}</div>
+
+                                                    </div>
+                                                </div>
+                                              </a>
+                                            </div>
+                                            <!-- END: Comments -->
+
+                                            @endforeach
+                                                    @endif
+
+                                        </div>
+
+                  </div>
+
+
+              </div>
+          </div>
+
+
+        
 
 
 
