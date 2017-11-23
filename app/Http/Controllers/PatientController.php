@@ -219,7 +219,7 @@ class PatientController extends Controller
 
           array_push($someArray, [
                 "label" => $bee_mains->label,
-                "data" => [[1, @number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100], [2, @number_format($this->standard_deviation($sd2)/$mean_value1, 2, '.', '')*100]]
+                "data" => [[1, @number_format($this->standard_deviation($sd)/$mean_value1, 2, '.', '')*100], [2, @number_format($this->standard_deviation($sd2)/$mean_value2, 2, '.', '')*100]]
             ]);
 
 
