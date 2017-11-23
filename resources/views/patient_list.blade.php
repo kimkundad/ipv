@@ -40,6 +40,10 @@ a:hover { text-decoration: none}
 .portlet>.portlet-title>.actions .btn-icon-only.btn-default.fullscreen:before {
     content: "\f065";
 }
+.mt-comments .mt-comment .mt-comment-body .mt-comment-text {
+
+    font-size: 13px;
+}
 </style>
 @stop('stylesheet')
 
@@ -123,7 +127,7 @@ a:hover { text-decoration: none}
                                                     <div class="mt-comment-body">
                                                         <div class="mt-comment-info">
                                                             <span class="mt-comment-author">{{$obj->patient_code}}</span>
-                                                            <span class="mt-comment-date">{{$obj->created_at}}</span>
+                                                            <span class="mt-comment-date">{{date('d-m-Y', strtotime($obj->created_at))}}</span>
                                                         </div>
                                                         <div class="mt-comment-text"> <strong>Hospital No.</strong> {{$obj->hospital_code}}, <strong>Age. </strong> {{$obj->age}}</div>
 
@@ -145,7 +149,7 @@ a:hover { text-decoration: none}
           </div>
 
 
-        
+
 
 
 
