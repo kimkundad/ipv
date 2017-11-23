@@ -42,10 +42,30 @@ class PatientController extends Controller
 
     public function report_item(){
 
-      return view('report_item');
+      $objs = DB::table('patients')
+            ->where('user_id', Auth::user()->id)
+            ->orderBy('id', 'asc')
+            ->get();
+
+      $data['objs'] = $objs;
+      return view('report_item', $data);
+
 
     }
 
+
+    public function search_case(Request $request)
+    {
+
+      $objs = DB::table('patients')
+            ->where('user_id', Auth::user()->id)
+            ->orderBy('id', 'asc')
+            ->get();
+
+      $data['objs'] = $objs;
+      return view('total_report', $data);
+
+    }
 
 
 

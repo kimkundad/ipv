@@ -55,17 +55,7 @@
     <!-- BEGIN CONTENT BODY -->
     <div class="page-content" style="min-height: 79px;">
         <!-- BEGIN PAGE HEAD-->
-        <div class="page-head">
-            <!-- BEGIN PAGE TITLE -->
-            <div class="page-title">
-                            <h1><i class="icon-book-open font-green-haze theme-font"></i> ID : {{$objs->patient_code}}
-
-                            </h1>
-                        </div>
-            <!-- END PAGE TITLE -->
-            <!-- BEGIN PAGE TOOLBAR -->
-
-        </div>
+    
         <!-- END PAGE HEAD-->
         <!-- BEGIN PAGE BREADCRUMB -->
         <ul class="page-breadcrumb breadcrumb">
@@ -84,7 +74,7 @@
 
 
 
-        <br>
+
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
         <div class="row">
