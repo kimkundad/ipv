@@ -71,9 +71,9 @@
         <ul class="page-breadcrumb breadcrumb">
             <li>
 
-                <a href="{{url('patient')}}" class="btn btn-sm green"><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list
 
-                                                                    </a>
+                <a href="{{url('welcome')}}" class="btn btn-sm default "><i class="icon-arrow-left" style="font-size:16px;"></i> Patient list</a>
+
 
             </li>
 
@@ -251,7 +251,7 @@
                                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                                                         <h4 class="modal-title">Delete item?</h4>
                                                                     </div>
-                                                                    <div class="modal-body"> 
+                                                                    <div class="modal-body">
 
                                                                     You want Delete item ?
 
@@ -259,7 +259,7 @@
                                                                     <div class="modal-footer">
 
                                                                       <form  method="POST" action="{{ url('patient_item_del') }}">
-                                                
+
                                                                         {{ csrf_field() }}
                                                                           <input type="hidden" name="item_id" class="form-control" value="{{$item_1->id}}" readonly/>
                                                                           <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
@@ -283,15 +283,15 @@
                                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                                                         <h4 class="modal-title">Change Value</h4>
                                                                     </div>
-                                                                    <div class="modal-body"> 
+                                                                    <div class="modal-body">
 
 
                                                 <form  method="POST" action="{{ url('patient_item_edit') }}">
-                                                
+
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <label class="control-label">Date</label>
-                                               
+
 
                                                   <div class="input-group">
                                                       <span class="input-group-addon">
@@ -301,7 +301,7 @@
                                                     </div>
 
                                                   </div>
-                                                 
+
                                                     <input type="hidden" name="item_id" class="form-control" value="{{$item_1->id}}" readonly/>
                                                     <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
 
@@ -318,7 +318,7 @@
                                                       <input type="number" step="0.01" name="dose_1" class="form-control" value="{{$item_1->dose_1}}"/>
 
                                                           </div>
-                                                          
+
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
@@ -326,7 +326,7 @@
                                                                     </div>
 
 
-                                                                 </form>   
+                                                                 </form>
 
 
                                                                 </div>
@@ -456,7 +456,7 @@
                                                 <td>
                                                   <div class="mt-action-buttons ">
                                                     <div class="btn-group btn-group-circle" style="width:84px">
-                                                        
+
 
 
 
@@ -483,7 +483,7 @@
                                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                                                         <h4 class="modal-title">Delete item?</h4>
                                                                     </div>
-                                                                    <div class="modal-body"> 
+                                                                    <div class="modal-body">
 
                                                                     You want Delete item ?
 
@@ -491,7 +491,7 @@
                                                                     <div class="modal-footer">
 
                                                                       <form  method="POST" action="{{ url('patient_item_del') }}">
-                                                
+
                                                                         {{ csrf_field() }}
                                                                           <input type="hidden" name="item_id" class="form-control" value="{{$item_2->id}}" readonly/>
                                                                           <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
@@ -519,15 +519,15 @@
                                                                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true"></button>
                                                                         <h4 class="modal-title">Change Value</h4>
                                                                     </div>
-                                                                    <div class="modal-body"> 
+                                                                    <div class="modal-body">
 
 
                                                 <form  method="POST" action="{{ url('patient_item_edit') }}">
-                                                
+
                                                 {{ csrf_field() }}
                                                 <div class="form-group">
                                                     <label class="control-label">Date</label>
-                                               
+
 
                                                   <div class="input-group">
                                                       <span class="input-group-addon">
@@ -537,7 +537,7 @@
                                                     </div>
 
                                                   </div>
-                                                 
+
                                                     <input type="hidden" name="item_id" class="form-control" value="{{$item_2->id}}" readonly/>
                                                     <input type="hidden" name="cat_id" class="form-control" value="{{$objs->id}}" readonly/>
 
@@ -554,7 +554,7 @@
                                                       <input type="number" step="0.01" name="dose_1" class="form-control" value="{{$item_2->dose_1}}"/>
 
                                                           </div>
-                                                          
+
                                                                     </div>
                                                                     <div class="modal-footer">
                                                                         <button type="button" class="btn dark btn-outline" data-dismiss="modal">Close</button>
@@ -562,7 +562,7 @@
                                                                     </div>
 
                                                                     </form>
-                                                                    
+
 
 
                                                                 </div>
