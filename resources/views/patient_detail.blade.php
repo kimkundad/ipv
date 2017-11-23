@@ -72,7 +72,25 @@
         <!-- BEGIN PAGE BASE CONTENT -->
 
 
+<?php
 
+function sd_square($x, $mean) { return pow($x - $mean,2); }
+
+// Function to calculate standard deviation (uses sd_square)
+function sd($array) {
+    // square root of sum of squares devided by N-1
+    return sqrt(array_sum(array_map("sd_square", $array, array_fill(0,count($array), (array_sum($array) / count($array)) ) ) ) / (count($array)-1) );
+}
+
+function standard_deviation($sample){
+  if(is_array($sample)){
+    $mean = array_sum($sample) / count($sample);
+    foreach($sample as $key => $num) $devs[$key] = pow($num - $mean, 2);
+    return sqrt(array_sum($devs) / (count($devs) - 1));
+  }
+}
+
+ ?>
 
 
         <!-- END PAGE BREADCRUMB -->
@@ -359,7 +377,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format($sd->total_sales, 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{number_format(sd($sd), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -370,10 +388,10 @@
 
                                                       <td>
                                                           <span class="bold theme-font">
-                                                            @if($mean_value1 == 0 || $sd->total_sales ==0)
+                                                            @if($mean_value1 == 0 || sd($sd) == 0)
                                                             0.00%
                                                             @else
-                                                            {{@number_format($sd->total_sales/$mean_value1, 2, '.', '')*100}}%
+                                                            {{@number_format(standard_deviation($sd)/$mean_value1, 2, '.', '')*100}}%
                                                             @endif
 
 
@@ -603,7 +621,7 @@
                                                       </td>
 
                                                       <td>
-                                                          <span class="bold theme-font">{{number_format($sd2->total_sales, 2, '.', '')}}</span>
+                                                          <span class="bold theme-font">{{number_format(sd($sd2), 2, '.', '')}}</span>
                                                       </td>
                                                   </tr>
                                                   <tr>
@@ -615,10 +633,10 @@
                                                       <td>
                                                           <span class="bold theme-font">
 
-                                                            @if($mean_value2 == 0 || $sd->total_sales ==0)
+                                                            @if($mean_value2 == 0 || sd($sd2) ==0)
                                                             0.00%
                                                             @else
-                                                            {{@number_format($sd2->total_sales/$mean_value2, 2, '.', '')}}%
+                                                            {{@number_format(sd($sd2)/$mean_value2, 2, '.', '')*100}}%
                                                             @endif
 
 
@@ -670,7 +688,7 @@
 
 <script type="text/javascript">
       //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
-      // var data2 = [[1, 100], [2, 140], [3, 180], [4, 60], [5, 59]];
+       var data2 = [[5.5,3],[5.3,3],[13.7,3],[4.2,3],[6.1,3]];
 
       //  var dataset = [{label: "TAC-BID",data: [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]]} ];
 

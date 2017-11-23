@@ -30,7 +30,9 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('add_patient', 'PatientController@add_patient');
   Route::get('add_item-{id}-{sub_id}', 'PatientController@add_item');
   Route::post('patient_item', 'PatientController@patient_item');
-  Route::get('api/get_chart/{id}', 'PatientController@get_chart');
+
+  Route::get('api/get_chart', 'PatientController@get_chart');
+
   Route::post('patient_item_edit', 'PatientController@patient_item_edit');
   Route::post('patient_item_del', 'PatientController@patient_item_del');
   Route::get('report_item', 'PatientController@report_item');

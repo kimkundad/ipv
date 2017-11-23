@@ -140,11 +140,77 @@ a:hover { text-decoration: none}
 
                       </form>
                       <br>
-                      <br>
+
+
+
+
                   </div>
 
 
               </div>
+          </div>
+
+
+
+          <div class="col-md-3">
+
+            <div class="portlet light bordered">
+
+
+              <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold uppercase font-dark">all Patient</span>
+
+                                </div>
+                                <div class="actions">
+
+                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+
+                <div class="portlet-body">
+                  </div>
+
+          </div>
+
+
+          </div>
+
+
+          <div class="col-md-9">
+            <div class="portlet light bordered">
+
+
+              <div class="portlet-title">
+                                <div class="caption">
+                                    <span class="caption-subject bold uppercase font-dark">all Patient</span>
+
+                                </div>
+                                <div class="actions">
+
+                                    <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#" data-original-title="" title=""> </a>
+                                </div>
+                            </div>
+
+                <div class="portlet-body">
+
+                  <div class="portlet light portlet-fit bordered">
+                      <div class="portlet-title">
+                          <div class="caption">
+                              <i class="icon-settings font-dark"></i>
+                              <span class="caption-subject font-dark sbold uppercase">Interactive Chart</span>
+                          </div>
+
+                      </div>
+                      <div class="portlet-body">
+                          <div id="flot-placeholder" class="chart"> </div>
+                      </div>
+                  </div>
+
+
+                  </div>
+
+          </div>
           </div>
 
 
@@ -173,6 +239,51 @@ a:hover { text-decoration: none}
 @endsection
 
 @section('scripts')
+
+<script src="{{url('assets/global/plugins/flot/jquery.flot.min.js')}}" type="text/javascript"></script>
+<script src="{{url('assets/date/js/bootstrap-datepicker.js')}}" type="text/javascript"></script>
+
+<script type="text/javascript">
+      //  var data = [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]];
+      // var data2 = [{data:[[1,5.5],[2,5.3],[3,13.7],[4,4.2],[5,6.1]]}];
+
+        $(document).ready(function(){
+            $.ajax({
+                url: '{{url('api/get_chart')}}', // getchart.php
+                dataType: 'JSON',
+                type: 'GET',
+               // dataType: 'jsonp',
+                data: {
+                	sid: "{{$sid}}",
+                  eid: "{{$eid}}"
+                      },
+                success: function(response) {
+                  console.log(response);
+                  //alert("5555");
+var dataset2 = [{label: "TAC-BID",data: [[1, 130], [2, 40], [3, 80], [4, 160], [5, 159], [6, 370], [7, 330], [8, 350], [9, 370], [10, 400], [11, 330], [12, 350]]} ];
+
+      var plot = $.plot("#flot-placeholder", response, {
+
+        series: {
+            lines: { show: true },
+            points: {
+                radius: 3,
+                show: true
+            }
+        }
+
+
+      });
+
+
+    }
+  });
+
+});
+
+
+
+    </script>
 
 @if ($message = Session::get('success_user'))
 <script type="text/javascript">
