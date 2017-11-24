@@ -74,27 +74,28 @@
                 <span aria-hidden="true"></span>
             </a>
             <ul>
+              <li>
+                  <a href="{{url('welcome')}}" target="_blank">
+                      <span>Home</span>
+                      <i class="icon-home"></i>
+                  </a>
+              </li>
                 <li>
-                    <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/4021469?ref=keenthemes" target="_blank" class="active">
-                        <span>Purchase Metronic</span>
-                        <i class="icon-basket"></i>
+                    <a href="{{url('/patient')}}" target="_blank" class="active">
+                        <span>Patient</span>
+                        <i class="icon-notebook"></i>
                     </a>
                 </li>
+
                 <li>
-                    <a href="https://themeforest.net/item/metronic-responsive-admin-dashboard-template/reviews/4021469?ref=keenthemes" target="_blank">
-                        <span>Customer Reviews</span>
-                        <i class="icon-users"></i>
-                    </a>
-                </li>
-                <li>
-                    <a href="http://keenthemes.com/showcast/" target="_blank">
-                        <span>Showcase</span>
+                    <a href="{{url('user_profile')}}" target="_blank">
+                        <span>User_profile</span>
                         <i class="icon-user"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="http://keenthemes.com/metronic-theme/changelog/" target="_blank">
-                        <span>Changelog</span>
+                    <a href="{{url('report_item')}}" target="_blank">
+                        <span>Report</span>
                         <i class="icon-graph"></i>
                     </a>
                 </li>
