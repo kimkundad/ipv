@@ -99,9 +99,10 @@
                                           </div>
                                           </a>
 
+                                          <a href="{{url('blog_detail')}}">
                                           <div class="tile double bg-grey-cascade">
                                               <div class="tile-body">
-                                                  <img src="http://keenthemes.com/preview/metronic/theme/assets/pages/media/profile/photo2.jpg" alt="" class="pull-right">
+                                                  <img src="{{url('assets/blog/photo2.jpg')}}" alt="" class="pull-right">
                                                   <h3>@lisa_wong</h3>
                                                   <p> I really love this theme. I look forward to check the next release! </p>
                                               </div>
@@ -112,6 +113,7 @@
                                                   <div class="number"> 10:45PM, 23 Jan </div>
                                               </div>
                                           </div>
+                                          </a>
 
 
                             <a href="{{url('news')}}">

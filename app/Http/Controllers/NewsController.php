@@ -16,6 +16,11 @@ class NewsController extends Controller
         return view('news');
     }
 
+    public function blog_detail()
+    {
+        return view('blog_detail');
+    }
+
     /**
      * Show the form for creating a new resource.
      *

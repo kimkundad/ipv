@@ -38,5 +38,7 @@ Route::group(['middleware' => 'auth'], function() {
   Route::get('report_item', 'PatientController@report_item');
   Route::post('search_case', 'PatientController@search_case');
   Route::resource('news', 'NewsController');
+  Route::get('blog_detail', 'NewsController@blog_detail');
+
 
 });

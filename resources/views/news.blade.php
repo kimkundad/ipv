@@ -19,6 +19,7 @@
     padding: 20px 20px 15px;
 
 }
+
 </style>
 @stop('stylesheet')
 
@@ -38,7 +39,7 @@
         <!-- END PAGE BREADCRUMB -->
         <!-- BEGIN PAGE BASE CONTENT -->
         <div class="row">
-            <div class="col-md-6">
+            <div class="col-md-8 col-md-offset-2">
 
               <div class="portlet light bordered">
 
@@ -50,11 +51,13 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/masonry6-768x500.jpg')}}" class="img-responsive">
                       <h4><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b></h4>
+                      </a>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, mi felis, aliquam at iaculis mi felis, aliquam
                         at iaculis finibus eu ex.</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
@@ -65,10 +68,12 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/blog-home4-768x555.jpg')}}" class="img-responsive">
                       <h4><b>Essentials For Your Business</b></h4>
+                      </a>
                       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the too charms of pleasure of the moment,</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
@@ -79,11 +84,13 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/masonry5.jpg')}}" class="img-responsive">
                       <h4><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b></h4>
+                      </a>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, mi felis, aliquam at iaculis mi felis, aliquam
                         at iaculis finibus eu ex.</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
@@ -94,10 +101,12 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/masonry7-1024x666.jpg')}}" class="img-responsive">
                       <h4><b>Essentials For Your Business</b></h4>
+                      </a>
                       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the too charms of pleasure of the moment,</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
@@ -109,11 +118,13 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/masonry9-1024x672.jpg')}}" class="img-responsive">
                       <h4><b>Lorem ipsum dolor sit amet, consectetur adipiscing elit</b></h4>
+                      </a>
                       <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam euismod eleifend ipsum, at posuere augue. Pellentesque mi felis, aliquam at iaculis eu, mi felis, aliquam at iaculis mi felis, aliquam
                         at iaculis finibus eu ex.</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
@@ -124,10 +135,12 @@
                   <div class="events-content">
 
                     <div class="mt-content border-grey-steel">
+                      <a href="{{url('blog_detail')}}">
                       <img src="{{url('assets/blog/masonry8.jpg')}}" class="img-responsive">
                       <h4><b>Essentials For Your Business</b></h4>
+                      </a>
                       <p>On the other hand, we denounce with righteous indignation and dislike men who are so beguiled and demoralized by the too charms of pleasure of the moment,</p>
-                      <a href="javascript:;" class="btn btn-circle red btn-outline pull-right">Read More</a>
+                      <a href="{{url('blog_detail')}}" class="btn btn-circle red btn-outline pull-right">Read More</a>
                         <br><br>
                     </div>
 
