@@ -29,7 +29,7 @@
                       <label class="control-label visible-ie8 visible-ie9">Email</label>
                       <div class="input-icon">
                           <i class="fa fa-envelope-o"></i>
-                          <input class="form-control placeholder-no-fix" type="email" autocomplete="off" placeholder="Email" name="email"> </div>
+                          <input class="form-control " type="text" autocomplete="off" placeholder="Email" name="email"> </div>
                   </div>
 
 
@@ -104,7 +104,7 @@
                     <span></span>
                 </label>
                 </div>
-          
+
             </div>
 
 
