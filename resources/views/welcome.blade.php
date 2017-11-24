@@ -114,6 +114,7 @@
                                           </div>
 
 
+                            <a href="{{url('news')}}">
                               <div class="tile bg-green-meadow">
                                     <div class="tile-body">
                                         <i class="fa fa-comments"></i>
@@ -123,6 +124,7 @@
                                         <div class="number"> 12 </div>
                                     </div>
                                 </div>
+                                </a>
 
                                 <a href="{{url('logout')}}">
                                 <div class="tile bg-red-sunglo">

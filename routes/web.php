@@ -37,5 +37,6 @@ Route::group(['middleware' => 'auth'], function() {
   Route::post('patient_item_del', 'PatientController@patient_item_del');
   Route::get('report_item', 'PatientController@report_item');
   Route::post('search_case', 'PatientController@search_case');
+  Route::resource('news', 'NewsController');
 
 });
