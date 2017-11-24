@@ -75,26 +75,26 @@
             </a>
             <ul>
               <li>
-                  <a href="{{url('welcome')}}" target="_blank">
+                  <a href="{{url('welcome')}}" class="active">
                       <span>Home</span>
                       <i class="icon-home"></i>
                   </a>
               </li>
                 <li>
-                    <a href="{{url('/patient')}}" target="_blank" class="active">
+                    <a href="{{url('/patient')}}" >
                         <span>Patient</span>
                         <i class="icon-notebook"></i>
                     </a>
                 </li>
 
                 <li>
-                    <a href="{{url('user_profile')}}" target="_blank">
+                    <a href="{{url('user_profile')}}" >
                         <span>User_profile</span>
                         <i class="icon-user"></i>
                     </a>
                 </li>
                 <li>
-                    <a href="{{url('report_item')}}" target="_blank">
+                    <a href="{{url('report_item')}}" >
                         <span>Report</span>
                         <i class="icon-graph"></i>
                     </a>
