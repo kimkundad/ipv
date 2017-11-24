@@ -130,7 +130,7 @@
         <script src="{{asset('./assets/global/plugins/select2/js/select2.full.min.js')}}" type="text/javascript"></script>
         <!-- BEGIN PAGE LEVEL SCRIPTS <script src="{{asset('./assets/pages/scripts/login-4.js')}}" type="text/javascript"></script> -->
 
-        <script src="{{asset('./assets/pages/scripts/login-4.js')}}" type="text/javascript"></script>
+        <script src="{{asset('./assets/pages/scripts/login-4.js?12')}}" type="text/javascript"></script>
 
     </body>
 
